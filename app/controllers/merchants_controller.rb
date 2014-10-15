@@ -1,5 +1,4 @@
 class MerchantsController < ApplicationController
-  protect_from_forgery
 
   def index
     @merchants = Merchant.all
@@ -10,22 +9,28 @@ class MerchantsController < ApplicationController
   end
 
   def create
-    @merchant = Merchant.create(merchant_params)
+    @merchant = Merchant.new(merchant_params)
     # raise params.inspect
-    redirect_to "/merchants/#{@merchant.id}"
+    if @merchant.save
+      redirect_to "/merchants/#{@merchant.id}"
+    else
+      puts merchant_params
+      render :new
+    end
   end
 
   def show
-    # puts "i'm in merchant#show"
     find_merchant
+    puts "i'm in merchant#show"
+    puts @merchant.id
   end
 
   private
   def merchant_params
-    params.require(:merchant).permit(:email, :user_name, :shop_name, :description, :password, :password_confirmation)
+    params.require(:merchant).permit(:email, :user_name, :shop_name, :description, :password_digest)
   end
 
   def find_merchant
-    Merchant.find(params[:id])
+    @merchant = Merchant.find(params[:id])
   end
 end
