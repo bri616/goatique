@@ -23,4 +23,14 @@ ActiveRecord::Schema.define(version: 20141015000114) do
     t.string   "password_digest"
   end
 
+  create_table "products", force: true do |t|
+    t.integer  "merchant_id"
+    t.string   "name"
+    t.integer  "price"
+    t.text     "description"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end
