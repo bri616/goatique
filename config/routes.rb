@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'orders/update'
+
   get "/",                    to: "home#index"
   get "/merchants/",          to: "merchants#index"
   get "/merchants/new",       to: "merchants#new"
