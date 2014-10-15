@@ -1,5 +1,11 @@
 == README
-Authors: Stephanie Pi
+
+Authors:
+Stephanie Pi
+Bri Dotson
+
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
