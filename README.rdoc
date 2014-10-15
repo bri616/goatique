@@ -3,6 +3,7 @@
 Authors:
 Stephanie Pi
 Bri Dotson
+Rachel Moshier
 Katie
 
 This README would normally document whatever steps are necessary to get the
