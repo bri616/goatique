@@ -13,9 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20141015212326) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "merchants", force: true do |t|
     t.string   "email"
     t.string   "user_name"
+    t.string   "password_confirmation"
     t.string   "shop_name"
     t.text     "description"
     t.datetime "created_at"
