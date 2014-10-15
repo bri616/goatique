@@ -1,10 +1,12 @@
 == README
 
+
 Authors:
 Stephanie Pi
 Bri Dotson
 Rachel Moshier
 Katie
+Rachelle Keblitis
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
