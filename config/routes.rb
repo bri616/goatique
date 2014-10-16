@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/merchants/new",       to: "merchants#new"
   post "/merchants/create",   to: "merchants#create"
   get "/merchants/:id",       to: "merchants#show"
+
+  get "/products/:id",        to: "products#show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
