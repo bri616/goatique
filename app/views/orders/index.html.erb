@@ -1,0 +1,9 @@
+
+
+<% @order.order_items.each do |item| %>
+  <p><%= item.product.name %>
+    $<%= item.product.price * item.product_quantity%>
+     QTY: <%= item.product_quantity %>
+    </p>
+
+<% end  %>

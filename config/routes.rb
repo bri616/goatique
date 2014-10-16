@@ -1,17 +1,24 @@
 Rails.application.routes.draw do
 
-  get 'orders/update'
 
   get "/",                    to: "home#index"
+
+#######################################################################
+
   get "/merchants/",          to: "merchants#index"
   get "/merchants/new",       to: "merchants#new"
   post "/merchants/create",   to: "merchants#create"
   get "/merchants/:id",       to: "merchants#show"
 
+#######################################################################
+
+  get "orders",                 to: "orders#index"
+  # get 'orders/update'
+  get  "/order_items/:id/edit", to: "order_items#edit",   as: :edit_order_items
+  put  "/order_items/:id",      to: "order_items#update", as: :order_items
 
 
-  get  "/orders/:id/edit", to: "orders#edit", as: :edit_order
-
+#######################################################################
 
   get "/products/:id",        to: "products#show"
   # The priority is based upon order of creation: first created -> highest priority.
