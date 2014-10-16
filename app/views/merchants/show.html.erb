@@ -5,5 +5,12 @@
 <body>
   <%= @merchant.user_name %>
   <%= params.inspect %>
+
+  <h2><%= @merchant.shop_name %></h2>
+  <ul>
+    <% @merchant.products.each do |product| %>
+    <li><a href="/products/<%= product.id %>"><%= product.name %></a></li>
+    <% end %>
+  </ul>
 </body>
 </html>
