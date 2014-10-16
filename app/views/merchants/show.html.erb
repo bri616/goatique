@@ -7,11 +7,9 @@
   <%= params.inspect %>
 
   <h2><%= @merchant.shop_name %></h2>
-  <ul>
     <% @merchant.products.each do |product| %>
       <%= render "shared/display_product", product: product %>
     <% end %>
-  </ul>
 
 </body>
 </html>
