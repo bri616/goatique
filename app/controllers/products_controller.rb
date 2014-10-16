@@ -13,26 +13,43 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     render :index
-
   end
 
   def about
     @product = Product.find(params[:id])
-
     render :about
-
   end
-
 
   def cart
     render :"/cart"
-
   end
-
 
   def add_to_cart
     redirect_to "/cart"
+  end
 
+  # def show
+  #   find_product
+  # end
+
+  #
+  # def create
+  #   @product = Product.new(product_params)
+  #   @product.vendor_id = session[:v_id]
+  #   if @product.save
+  #     redirect_to "/product/#{@product.vendor_id}/product_list"
+  #   else
+  #     redirect_to "/product/new_product"
+  #   end
+  # end
+
+  # def product_list
+  #   @products = Product.all
+  # end
+
+  private
+  def find_product
+    @product = Product.find(params[:id])
   end
 
 end

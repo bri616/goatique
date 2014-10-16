@@ -1,13 +1,32 @@
 Rails.application.routes.draw do
 
+  # Home
+
+  get "/",                    to: "home#index"
+
+  # Merchants - Create, view all,
+
+  get "/merchants/",          to: "merchants#index"
+  get "/merchants/new",       to: "merchants#new"
+  post "/merchants/create",   to: "merchants#create"
+  get "/merchants/:id",       to: "merchants#show"
+
+  # Orders
+
   get  "/cart",                   to: "products#cart"
   post "/:id/cart",               to: "products#add_to_cart"
+  get  "/orders/:id/edit", to: "orders#edit", as: :edit_order
+  get "orders/update"
+
+  # Products - Create, view all
+
   get  "/products/:id/about",     to: "products#about"
   get  "/products/index",         to: "products#index"
   post "/products/new",           to: "products#add_to_database"
   get  "/products/new",           to: "products#new"
-  get  "/",                       to: "home#index"
-  get  "/merchants/",             to: "merchants#index"
+  # get "/products/:id",        to: "products#show"
+  # get "/products/",           to: "products#product_list"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

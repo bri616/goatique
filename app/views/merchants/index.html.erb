@@ -1,0 +1,12 @@
+<a href="/merchants">Merchants index</a>
+
+<h3>All merchants</h3>
+  <ul>
+    <% Merchant.all.each do |merchant| %>
+      <li><a href="/merchants/<%=merchant.id%>"><%=merchant.user_name%></a></li>
+    <% end %>
+  </ul>
+
+  <a href="/merchants/new">Sign up new merchant</a>
+
+  <%= params.inspect %>

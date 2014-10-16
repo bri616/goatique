@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Sign up new merchant</title>
+</head>
+
+<body>
+  <form method="POST" action="/merchants/create">
+    <table>
+      <tr> <td>Email:</td> <td><input type="text" name="merchant[email]"/></td></tr>
+      <tr> <td>Username:</td> <td><input type="text" name="merchant[user_name]"/></td></tr>
+      <tr> <td>Shop name:</td> <td><input type="text" name="merchant[shop_name]"/></td></tr>
+      <tr> <td>Description:</td> <td><input type="text" name="merchant[description]"/></td></tr>
+      <tr> <td>Password:</td> <td><input type="password" name="merchant[password]"/></td></tr>
+      <tr><td>Confirm password:</td> <td><input type="password" name="merchant[password_confirmation]" /></td></tr>
+
+  </table>
+
+    <input type="submit" value="Create Market"/>
+  </form>
+  </form>
+</body>
+</html>
