@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
-  post "products/new",     to: "products#add_to_database"
-  get  "/products/new",    to: "products#new"
-  get  "/",                to: "home#index"
-  get  "/merchants/",      to: "merchants#index"
+
+  get  "/products/:id/about",         to: "products#about"
+  get  "/products/index",         to: "products#index"
+  post "/products/new",           to: "products#add_to_database"
+  get  "/products/new",           to: "products#new"
+  get  "/",                       to: "home#index"
+  get  "/merchants/",             to: "merchants#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
