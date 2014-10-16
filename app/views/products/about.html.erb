@@ -1,0 +1,7 @@
+<h2> About Product </h2>
+<h3>Name: <%=@product.name%></h3>
+<p>Price: <%=@product.price%> Dollars</p>
+<p><%=@product.description%></p>
+
+
+<%= button_to "Add to Cart", "/#{@product.id}/cart" %><form method="POST" action="/id:cart" >

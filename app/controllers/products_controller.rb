@@ -1,16 +1,37 @@
 class ProductsController < ApplicationController
 
-  def show
-    find_product
-  end
-
-  private
-  def find_product
-    @product = Product.find(params[:id])
-  end
-  def new_product
+  def new
     @product = Product.new
   end
+
+  def add_to_database
+    @product = Product.new(params.require(:product).permit(:name, :description, :price))
+    @product.save
+    redirect_to "/products/index"
+  end
+
+  def index
+    @products = Product.all
+    render :index
+  end
+
+  def about
+    @product = Product.find(params[:id])
+    render :about
+  end
+
+  def cart
+    render :"/cart"
+  end
+
+  def add_to_cart
+    redirect_to "/cart"
+  end
+
+  # def show
+  #   find_product
+  # end
+
   #
   # def create
   #   @product = Product.new(product_params)
@@ -25,5 +46,10 @@ class ProductsController < ApplicationController
   # def product_list
   #   @products = Product.all
   # end
+
+  private
+  def find_product
+    @product = Product.find(params[:id])
+  end
 
 end
