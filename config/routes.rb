@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # Home
 
   get "/",                    to: "home#index"
+  get "/home/index",         to: "home#search"
 
   # Merchants - Create, view all,
 
