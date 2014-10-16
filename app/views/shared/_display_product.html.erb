@@ -1,0 +1,28 @@
+<div class="product-container">
+  <div class="product-name">
+    <a href="/products/<%= product.id %>"><%= product.name %></a>
+  </div>
+
+  <div class="product-image">
+
+  </div>
+
+  <div class="product-merchant">
+    Sold by:
+    <span class="merchant-shop-link">
+      <a href="/merchants/<%= product.merchant.id %>"><%= product.merchant.shop_name %></a>
+    </span>
+  </div>
+
+  <div class="product-description">
+    <%= product.description %>
+  </div>
+
+  <div class="product-price">
+    Price: <%= product.price %>
+  </div>
+
+  <div class="add-to-cart">
+
+  </div>
+</div>
