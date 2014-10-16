@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def product_list
-    @products = Prodect.all
+    @products = Product.all
   end
-  
+
 end
