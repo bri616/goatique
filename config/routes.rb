@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-
-  get  "/products/:id/about",         to: "products#about"
+  get  "/cart",                   to: "products#cart"
+  post "/:id/cart",               to: "products#add_to_cart"
+  get  "/products/:id/about",     to: "products#about"
   get  "/products/index",         to: "products#index"
   post "/products/new",           to: "products#add_to_database"
   get  "/products/new",           to: "products#new"

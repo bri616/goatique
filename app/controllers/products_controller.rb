@@ -17,10 +17,21 @@ class ProductsController < ApplicationController
   end
 
   def about
-    @description = Product.find(params[:id]).description
-    @price = Product.find(params[:id]).price
-    @name = Product.find(params[:id]).name
+    @product = Product.find(params[:id])
+
     render :about
+
+  end
+
+
+  def cart
+    render :"/cart"
+
+  end
+
+
+  def add_to_cart
+    redirect_to "/cart"
 
   end
 
