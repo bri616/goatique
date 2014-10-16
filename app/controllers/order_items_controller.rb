@@ -1,7 +1,6 @@
-class OrderItemController < ApplicationController
+class OrderItemsController < ApplicationController
 
   def edit
-
     @order_item = OrderItem.find(params[:id])
 
   end

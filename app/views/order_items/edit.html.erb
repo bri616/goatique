@@ -1,17 +1,14 @@
-<h1>Orders#update</h1>
-<p>Find me in app/views/orders/update.html.erb</p>
+<h1>Edit Order</h1>
 
 
-<div class="pagebody">
+<div >
 
-<h1>Edit</h1>
-<h4> <%= @order %></h4>
+<h4> <%= @order_item.product.name %></h4>
 
 <form action="/order_item/<%= @order_item.id %>" method="POST">
   <input type="hidden" name="_method" value="PUT"/>
 
   QTY <input type="text" name="mango[qty]" value="<%= @order_item.product_quantity %>"/>
-    <!-- number <input type="text" name="banana[order_item]" value="<%= @order.size %>"/>  NO IDEA HOW THIS WORKS, BUT I WAS HOPING TO HAVE THE ORDER VISIBLE HERE AND THE CUSTOMER COULD EDIT HOW MANY ITEMS THEY WANTED TO ORDER-->
 
   <input type="submit" />
 
