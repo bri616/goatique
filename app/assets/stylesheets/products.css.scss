@@ -3,5 +3,33 @@
   border: 2px solid pink;
   width: 20%;
   margin: 20px;
-  height: 400px;
+  height: 500px;
+  vertical-align: top;
+  position: relative;
+}
+
+.product-container > .product-name {
+  text-align: center;
+  padding: 10px;
+  font-size: 20pt;
+  font-family: sans-serif;
+
+}
+
+.product-container > .product-name a:link{
+  color: #c24653;
+}
+
+.product-container > .product-merchant {
+  padding: 10px;
+}
+
+.product-container > .product-description {
+  font-family: sans-serif;
+  padding: 5px;
+}
+
+.product-container > .product-price {
+  position: absolute;
+  bottom: 0;
 }
