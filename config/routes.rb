@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   # Products - Create, view all, edit, and delete
 
-  
+  get "/products/",           to: "products#product_list"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
