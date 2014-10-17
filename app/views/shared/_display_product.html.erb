@@ -23,8 +23,6 @@
   </div>
 
   <div class="add-to-cart">
-    <%= form_for product, :url => {:action => "add_to_cart", :controller => "products", :id => product} do |f| %>
-      <%= f.submit 'Add to Cart' %>
-    <% end %>
+    <%= button_to "Add to Cart", order_items_path(product), :class => "button" %>
   </div>
 </div>
