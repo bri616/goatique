@@ -22,11 +22,11 @@ class MerchantsController < ApplicationController
   end
 
   private
-  def merchant_params
-    params.require(:merchant).permit(:email, :user_name, :shop_name, :description, :password, :password_confirmation)
-  end
+    def merchant_params
+      params.require(:merchant).permit(:email, :user_name, :shop_name, :description, :password, :password_confirmation)
+    end
 
-  def find_merchant
-    @merchant = Merchant.find(params[:id])
-  end
+    def find_merchant
+      @merchant = Merchant.find(params[:id])
+    end
 end
