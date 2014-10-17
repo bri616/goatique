@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+/* background & typography */
+
+body {
+  background-color: #fdf6e3;
+  text-align: left;
+  font-family: 'Helvetica';
+  color: rgb(82, 104, 112);
+}
+
+a:link, a:visited {
+  color: rgb(98, 144, 156);
+  /* make blue brighter */
+  text-decoration: none;
+}
+
+a:hover {
+    background-color: rgb(252, 184, 0);
+    background-position: 100% 100%;
+}
