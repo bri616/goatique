@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
-  # Home
+
 
   get "/",                    to: "home#index"
+
+#######################################################################
+
+  # Home
+
+  get "/",                   to: "home#index"
   get "/home/index",         to: "home#search"
 
   # Merchants - Create, view all,
@@ -12,6 +18,16 @@ Rails.application.routes.draw do
   post "/merchants/create",   to: "merchants#create"
   get "/merchants/:id",       to: "merchants#show"
 
+#######################################################################
+
+  get "/orders",                 to: "orders#index"
+  # get 'orders/update'
+  get  "/order_items/:id/edit", to: "order_items#edit",   as: :edit_order_items
+  put  "/order_items/:id",      to: "order_items#update", as: :order_items
+
+  delete "/order_items/:id",     to: "order_items#destroy", as: :delete_order_items
+
+#######################################################################
   # Orders
 
   get  "/cart",                   to: "products#cart"
@@ -26,11 +42,15 @@ Rails.application.routes.draw do
 
   # Products - Create, view all
 
-  get  "/products/:id/about",     to: "products#about"
-  get  "/products/index",         to: "products#index"
-  post "/products/new",           to: "products#add_to_database"
-  get  "/products/new",           to: "products#new"
+  get  "/products/:id/about", to: "products#about"
+  get  "/products/index",     to: "products#index"
+  post "/products/new",       to: "products#add_to_database"
+  get  "/products/new",       to: "products#new"
 
+  # Categories - View
+
+  get "/categories/",         to: "categories#index"
+  get "/categories/:id",      to: "categories#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

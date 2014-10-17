@@ -1,0 +1,21 @@
+<h1>Edit Order</h1>
+
+
+<div >
+
+<h4> <%= @order_item.product.name %></h4>
+
+<form action="/order_item/<%= @order_item.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT"/>
+
+  QTY <input type="text" name="mango[qty]" value="<%= @order_item.product_quantity %>"/>
+
+  <input type="submit" />
+
+
+
+
+
+</form>
+
+</div>

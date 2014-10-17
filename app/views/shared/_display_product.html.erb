@@ -1,6 +1,6 @@
 <div class="product-container">
   <div class="product-name">
-    <a href="/products/<%= product.id %>"><%= product.name %></a>
+    <a href="/products/<%= product.id %>/about"><%= product.name %></a>
   </div>
 
   <div class="product-image">
@@ -21,6 +21,10 @@
   <div class="product-price">
     Price: <%= product.price %>
   </div>
+
+  Tags: <% product.categories.each do |category| %>
+          <%= category.name %>
+        <% end %>
 
   <div class="add-to-cart">
     <%= button_to "Add to Cart", order_items_path(product), :class => "button" %>
