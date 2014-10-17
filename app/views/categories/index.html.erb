@@ -1,0 +1,12 @@
+<html>
+<head>
+  <title>Categories</title>
+</head>
+
+<body>
+  <h3>All tags:</h3>
+  <% @categories.each do |category| %>
+      <a href="/categories/<%=category.id%>"><%=category.name%></a>
+  <% end %>
+</body>
+</html>

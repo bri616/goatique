@@ -10,27 +10,23 @@ class MerchantsController < ApplicationController
 
   def create
     @merchant = Merchant.new(merchant_params)
-    # raise params.inspect
     if @merchant.save
       redirect_to "/merchants/#{@merchant.id}"
     else
-      puts merchant_params
       render :new
     end
   end
 
   def show
     find_merchant
-    puts "i'm in merchant#show"
-    puts @merchant.id
   end
 
   private
-  def merchant_params
-    params.require(:merchant).permit(:email, :user_name, :shop_name, :description, :password, :password_confirmation)
-  end
+    def merchant_params
+      params.require(:merchant).permit(:email, :user_name, :shop_name, :description, :password, :password_confirmation)
+    end
 
-  def find_merchant
-    @merchant = Merchant.find(params[:id])
-  end
+    def find_merchant
+      @merchant = Merchant.find(params[:id])
+    end
 end
