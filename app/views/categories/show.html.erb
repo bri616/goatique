@@ -1,0 +1,12 @@
+<html>
+<head>
+  <title><%= @category.name %></title>
+</head>
+
+<body>
+  <h3>Products tagged <%= @category.name %></h3>
+  <% @category.products.each do |product| %>
+    <a href="/products/<%=product.id%>/about"><%=product.name%></a>
+  <% end %>
+</body>
+</html>

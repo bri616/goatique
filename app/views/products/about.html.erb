@@ -12,7 +12,7 @@
 
   <!-- why can't this go on one line? -->
   Tags: <% @product.categories.each do |category| %>
-          <%= category.name %>
+          <a href="/categories/<%= category.id %>"><%= category.name %>
         <% end %><br>
 <%= button_to "Add to Cart", "/#{@product.id}/cart" %><form method="POST" action="/id:cart" >
 </body>
