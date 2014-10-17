@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get  "/order_items/:id/edit", to: "order_items#edit",   as: :edit_order_items
   put  "/order_items/:id",      to: "order_items#update", as: :order_items
 
+  delete "/order_items/:id",     to: "order_items#destroy", as: :delete_order_items
 
 #######################################################################
 
