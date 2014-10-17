@@ -5,11 +5,14 @@
 <h2>Add New Product</h2>
 
 <form action="/products/new" method="POST">
-  Product <input type="text" name="product[name]" />
-  Description <input type="text" name="product[description]" />
-  Price <input type="text" name="product[price]" />
-  Categories <input type="text" name="product[categories]" />
+  <table>
+  <tr><td>Name </td><td><input type="text" name="product[name]"/></td></tr>
+  <tr><td>Description </td><td><input type="text" name="product[description]" /></td></tr>
+  <tr><td>Price </td><td><input type="text" name="product[price]" /></td></tr>
+  <tr><td>Categories </td><td><input type="text" name="product[categories]" /></td></tr>
+  <tr><td>Merchant ID </td><td><input type="number" name="product[merchant_id]"</td></tr><!--This line is temporary until we implement login and new product is associated with logged-in merchant automagically-->
 
-  <button name="[button]">Submit</button>
+  <tr><td><button name="[button]">Submit</button></td></tr>
+</table>
 
 <form>

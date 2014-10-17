@@ -7,12 +7,12 @@
 <h2> About Product </h2>
   <h3><%= @product.name %></h3>
   <blockquote> <%= @product.description %> </blockquote>
-  <%= number_to_currency(@product.price) %><br>
+  Sold by <a href="/merchants/<%= @product.merchant_id %>"><%=Merchant.find(@product.merchant_id).shop_name %></a> for <%= number_to_currency(@product.price) %><br>
   <%= @product.quantity %> in stock <br>
 
   <!-- why can't this go on one line? -->
-  Tags: <% @product.categories.each do |category| %>
-          <a href="/categories/<%= category.id %>"><%= category.name %>
+  Categories: <% @product.categories.each do |category| %>
+          <a href="/categories/<%= category.id %>"><%= category.name %><br>
         <% end %><br>
 <%= button_to "Add to Cart", "/#{@product.id}/cart" %><form method="POST" action="/id:cart" >
 </body>
