@@ -1,9 +1,18 @@
 
 
-<% @order.order_items.each do |item| %>
-  <p><%= item.product.name %>
-    $<%= item.product.price * item.product_quantity%>
-     QTY: <%= item.product_quantity %>
-    </p>
+<% @order.order_items.each do |banana| %>
+  <p><%= banana.product.name %>
+    $<%= banana.product.price * banana.product_quantity%>
+
+    <form action="/order_items/<%= @order.id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT"/>
+
+      QTY <input type="text" name="mango[product_quantity]" value= "<%= banana.product_quantity %>" />
+
+      <input type="submit" />
+    </form>
+
+
+  </p>
 
 <% end  %>

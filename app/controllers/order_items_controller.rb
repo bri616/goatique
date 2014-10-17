@@ -9,15 +9,15 @@ class OrderItemsController < ApplicationController
 
   def update
     @order_item = OrderItem.find(params[:id])
-    if @order_item.update(orderitem_params)
-    redirect_to "/"
+    if @order_item.update(order_params)
+    redirect_to "/orders"
     else
       render :edit
     end
   end
 
-  def orderitem_params
-    params.require(:banana).permit(:order_item) #can i access the attributes of the other models that Orders is associated with, such as price, etc?
+  def order_params
+    params.require(:mango).permit(:product_quantity) #can i access the attributes of the other models that Orders is associated with, such as price, etc?
   end
 
 end

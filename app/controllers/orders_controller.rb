@@ -23,6 +23,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:banana).permit(:order_item) #can i access the attributes of the other models that Orders is associated with, such as price, etc?
+    params.require(:mango).permit(:order_item) #can i access the attributes of the other models that Orders is associated with, such as price, etc?
   end
 end
