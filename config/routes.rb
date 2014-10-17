@@ -15,9 +15,13 @@ Rails.application.routes.draw do
   # Orders
 
   get  "/cart",                   to: "products#cart"
-  post "/:id/cart",               to: "products#add_to_cart"
+  post "/:id/cart",               to: "products#add_to_cart", as: :add_to_cart
   get  "/orders/:id/edit", to: "orders#edit", as: :edit_order
   get "orders/update"
+
+  # Order Items
+
+  
 
   # Products - Create, view all
 

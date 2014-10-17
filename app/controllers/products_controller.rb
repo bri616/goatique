@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def cart
-    render :"/cart"
+    #render :"/cart"
   end
 
   def add_to_cart
