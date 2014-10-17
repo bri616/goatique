@@ -4,7 +4,7 @@
   <p><%= banana.product.name %>
     $<%= banana.product.price * banana.product_quantity%>
 
-    <form action="/order_items/<%= @order.id %>" method="POST">
+    <form action="/order_items/<%= banana.id %>" method="POST">
       <input type="hidden" name="_method" value="PUT"/>
 
       QTY <input type="text" name="mango[product_quantity]" value= "<%= banana.product_quantity %>" />
