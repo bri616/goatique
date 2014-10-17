@@ -1,0 +1,7 @@
+<h2> Products!!! <h2/>
+
+<%@products.each do |product| %>
+  <li><a href="<%=product.id %>/about"><%=product.name %></a></li>
+<% end %>
+
+<a href="/products/new">Create a new product</a>

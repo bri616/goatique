@@ -3,6 +3,22 @@
 </head>
 
 <body>
+<h2> Welcome to Goatique </h3>
 <a href="/merchants/">Merchant list</a>
+
+<!--
+add a form
+take information from the form
+do something with it
+compare it with all prodcuts in database
+by name Product.all(name: ) // @product.all <= iteration
+-->
+
+<form action="/home/index" method="GET">
+  Search Products<input type="text" name="product[name]" />
+
+  <button name="[button]">Submit</button>
+
+<form>
 </body>
 </html>
