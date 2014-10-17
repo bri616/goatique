@@ -9,6 +9,11 @@
   <blockquote> <%= @product.description %> </blockquote>
   <%= number_to_currency(@product.price) %><br>
   <%= @product.quantity %> in stock <br>
+
+  <!-- why can't this go on one line? -->
+  Tags: <% @product.categories.each do |category| %>
+          <%= category.name %>
+        <% end %><br>
 <%= button_to "Add to Cart", "/#{@product.id}/cart" %><form method="POST" action="/id:cart" >
 </body>
 </html>
