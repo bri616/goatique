@@ -1,0 +1,30 @@
+.header {
+  height: 200px;
+  background: #8cd6fc;
+}
+
+.brand {
+  display: inline-block;
+  position: relative;
+  height: 150px;
+  margin-top: 10px;
+  width: 400px;
+  color: white;
+  background-image: url('goatique-logo.png');
+  background-repeat: no-repeat;
+  background-position: 30px 5px;
+}
+
+.brand h1{
+  position: absolute;
+  float: right;
+  bottom: 0px;
+  right: 0px;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 45pt;
+
+}
+
+.brand strong{
+  font-weight: bold;
+}

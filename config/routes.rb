@@ -38,7 +38,7 @@ Rails.application.routes.draw do
 
   # Order Items
 
-  post "/order_items",            to: "order_items#create", as: :order_items
+  post "/order_items",            to: "order_items#create"#, as: :order_items
 
   # Products - Create, view all
 
