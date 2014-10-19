@@ -4,6 +4,7 @@ html {
   color: #29829d;
 }
 
+// header styling here
 .header {
   height: 200px;
   position: relative;
@@ -44,6 +45,12 @@ html {
   right: 30px;
 }
 
+.nav li{
+  font-size: 15pt;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
 .nav a:link, .nav a:visited, .nav a:hover, .nav a:active {
   color: white;
   text-decoration: none;
@@ -51,7 +58,6 @@ html {
 
 .nav a:hover {
   color: #29829d;
-  text-decoration: underline;
 }
 
 .horizontal-list > li{
@@ -61,4 +67,12 @@ html {
   display: inline-block;
   text-decoration: none;
 
+}
+
+// content styling here
+
+.content-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
 }
