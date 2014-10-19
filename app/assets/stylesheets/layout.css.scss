@@ -1,6 +1,7 @@
 .header {
   height: 200px;
   background: #8cd6fc;
+  position: relative;
 }
 
 .brand {
@@ -27,4 +28,31 @@
 
 .brand strong{
   font-weight: bold;
+}
+
+.nav {
+  display: inline-block;
+  float: right;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+}
+
+.nav a:link, .nav a:visited, .nav a:hover, .nav a:active {
+  color: white;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #29829d;
+  text-decoration: underline;
+}
+
+.horizontal-list > li{
+  padding: 20px;
+  font-family: sans-serif;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+
 }
