@@ -1,7 +1,13 @@
+html {
+  background: #8cd6fc;
+  font-family: sans-serif;
+  color: #29829d;
+}
+
 .header {
   height: 200px;
-  background: #8cd6fc;
   position: relative;
+  border-bottom: 5px solid white;
 }
 
 .brand {
