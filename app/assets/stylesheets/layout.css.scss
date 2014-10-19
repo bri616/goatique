@@ -1,8 +1,26 @@
+// layout styling here
+
 html {
   background: #8cd6fc;
   font-family: sans-serif;
   color: #29829d;
 }
+
+.horizontal-list > li{
+  padding: 20px;
+  font-family: sans-serif;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+
+}
+
+
+td {
+  padding: 10px;
+}
+
+
 
 // header styling here
 .header {
@@ -60,14 +78,6 @@ html {
   color: #29829d;
 }
 
-.horizontal-list > li{
-  padding: 20px;
-  font-family: sans-serif;
-  color: white;
-  display: inline-block;
-  text-decoration: none;
-
-}
 
 // content styling here
 
