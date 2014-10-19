@@ -26,7 +26,7 @@ td {
 .header {
   height: 200px;
   position: relative;
-  border-bottom: 5px solid white;
+  // border-bottom: 5px solid white;
 }
 
 .brand {
@@ -61,6 +61,7 @@ td {
   position: absolute;
   bottom: 10px;
   right: 30px;
+  border-bottom: 3px solid white;
 }
 
 .nav li{
