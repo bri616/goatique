@@ -22,6 +22,10 @@ class ProductsController < ApplicationController
     render :about
   end
 
+  def edit
+    find_product
+  end
+
   def cart
     render :"/cart"
   end
