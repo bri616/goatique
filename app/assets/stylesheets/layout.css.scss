@@ -1,0 +1,93 @@
+// layout styling here
+
+html {
+  background: #8cd6fc;
+  font-family: sans-serif;
+  color: #29829d;
+}
+
+.horizontal-list > li{
+  padding: 20px;
+  font-family: sans-serif;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+
+}
+
+
+td {
+  padding: 10px;
+}
+
+
+
+// header styling here
+.header {
+  height: 200px;
+  position: relative;
+  // border-bottom: 5px solid white;
+}
+
+.header a{
+  color: white;
+}
+
+.brand {
+  display: inline-block;
+  position: relative;
+  height: 150px;
+  margin-top: 10px;
+  width: 400px;
+  color: white;
+  background-image: url('goatique-logo.png');
+  background-repeat: no-repeat;
+  background-position: 30px 5px;
+}
+
+.brand h1{
+  position: absolute;
+  float: right;
+  bottom: 0px;
+  right: 0px;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 45pt;
+
+}
+
+.brand strong{
+  font-weight: bold;
+}
+
+.nav {
+  display: inline-block;
+  float: right;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  border-bottom: 3px solid white;
+}
+
+.nav li{
+  font-size: 15pt;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.nav a:link, .nav a:visited, .nav a:hover, .nav a:active {
+  color: white;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #29829d;
+}
+
+
+// content styling here
+
+.content-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
