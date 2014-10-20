@@ -8,6 +8,7 @@ html {
 
 .horizontal-list > li{
   padding: 20px;
+  padding-bottom: 15px;
   font-family: sans-serif;
   color: white;
   display: inline-block;
@@ -66,7 +67,7 @@ a:link, a:visited {
   display: inline-block;
   float: right;
   position: absolute;
-  bottom: 10px;
+  bottom: 50px;
   right: 30px;
   border-bottom: 3px solid white;
 }

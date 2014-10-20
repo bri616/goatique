@@ -13,12 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-/* background & typography */
-
-/*body {
-  background-color: #fdf6e3;
-  text-align: left;
-  font-family: 'Helvetica';
-  color: rgb(82, 104, 112);
-}
