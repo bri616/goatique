@@ -4,11 +4,24 @@
   <title>Goatique</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,800' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="header">
+    <span class="brand"><a href="/"><h1><strong>Goat</strong>ique</h1></a></span>
+    <div class="nav">
+      <ul class="horizontal-list">
+        <li><a href="/merchants/">Merchants</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="/merchants/new">Register</a></li>
+      </ul>
+    </div>
+  </div>
 
-<%= yield %>
+<div class="content-container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
