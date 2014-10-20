@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def add_to_database
-    @product = Product.new(params.require(:product).permit(:name, :description, :price, :merchant_id))
+    @product = Product.new(params.require(:product).permit(:name, :description, :price, :quantity, :merchant_id))
     category_names = params.require(:product).permit(:categories)[:categories]
     add_to_db(category_names)
     @product.save
@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   end
 
   def cart
-    render :"/cart"
+    #render :"/cart"
   end
 
   def add_to_cart
