@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20141017015106) do
   create_table "merchants", force: true do |t|
     t.string   "email"
     t.string   "user_name"
+    t.string   "password_confirmation"
     t.string   "shop_name"
     t.text     "description"
     t.datetime "created_at"
