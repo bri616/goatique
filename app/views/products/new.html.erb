@@ -5,10 +5,16 @@
 <h2>Add New Product</h2>
 
 <form action="/products/new" method="POST">
-  Product <input type="text" name="product[name]" />
-  Description <input type="text" name="product[description]" />
-  Price <input type="text" name="product[price]" />
-  Categories <input type="text" name="product[categories]" />
+  <div><p>Product</div>
+    <div><input type="text" name="product[name]" /></p></div>
+  <div><p>Description</div>
+    <div><input type="text" name="product[description]" /></p></div>
+  <div><p>Price</div>
+    <div><input type="text" name="product[price]" /></p></div>
+  <div><p>Categories</div>
+    <div><input type="text" name="product[categories]" /></p></div>
+  <div><p>Stock</div>
+    <div><input type="text" name="product[quantity]" /></p></div>
 
   <button name="[button]">Submit</button>
 
