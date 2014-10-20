@@ -31,6 +31,15 @@ class OrderItemsController < ApplicationController
 
   end
 
+  # def update_stock
+  #   @order_item = OrderItem.find(params[:id])
+  #   if @order_item.product_quantity >= 1
+  #     @order_item.product.quantity - @order_item.product_quantity
+  #   else
+  #   end
+  # end
+
+
   def update
     @order_item = OrderItem.find(params[:id])
     if @order_item.update(order_params)
@@ -54,5 +63,6 @@ class OrderItemsController < ApplicationController
   def order_item_params
     params.permit(:product_id, :order_id)
   end
+
 
 end

@@ -1,7 +1,7 @@
 .product-container {
   display: inline-block;
-  border: 2px solid pink;
-  width: 20%;
+  border: 2px solid #29829d;
+  width: 28%;
   margin: 20px;
   height: 500px;
   vertical-align: top;
@@ -26,7 +26,7 @@
 
 .product-container > .product-description {
   font-family: sans-serif;
-  padding: 5px;
+  padding: 10px;
 }
 
 .product-container > .product-price {

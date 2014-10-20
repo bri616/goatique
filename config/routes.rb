@@ -37,8 +37,10 @@ Rails.application.routes.draw do
   post "/orders/:id",             to: "orders#show"#, as: :cart
 
   # Order Items
-  
+
   post "/order_items/:id",            to: "order_items#create"
+  post "/order_items",            to: "order_items#create"#, as: :order_items
+
 
   # Products - Create, view all
 
