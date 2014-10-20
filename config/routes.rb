@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-
-
-  get "/",                    to: "home#index"
-
-#######################################################################
-
   # Home
 
   get "/",                   to: "home#index"
@@ -13,10 +7,10 @@ Rails.application.routes.draw do
 
   # Merchants - Create, view all,
 
-  get "/merchants/",          to: "merchants#index"
-  get "/merchants/new",       to: "merchants#new"
-  post "/merchants/create",   to: "merchants#create"
-  get "/merchants/:id",       to: "merchants#show"
+  get "/merchants/",          to: "merchants#index",  as: :merchants_home
+  get "/merchants/new",       to: "merchants#new",    as: :merchant_signup
+  post "/merchants/create",   to: "merchants#create", as: :merchant_create
+  get "/merchants/:id",       to: "merchants#show",   as: :merchant_show
 
 #######################################################################
 
@@ -42,10 +36,12 @@ Rails.application.routes.draw do
 
   # Products - Create, view all
 
-  get  "/products/:id/about", to: "products#about"
-  get  "/products/index",     to: "products#index"
-  post "/products/new",       to: "products#add_to_database"
-  get  "/products/new",       to: "products#new"
+  get  "/products/:id/about", to: "products#about",           as: :product_show
+  get  "/products/index",     to: "products#index",           as: :products_home
+  post "/products/new",       to: "products#add_to_database", as: :product_create
+  get  "/products/new",       to: "products#new",             as: :product_new
+  get  "/products/:id/edit",      to: "products#edit",            as: :product_edit
+  put  "/products/:id/",  to: "products#update"
 
   # Categories - View
 

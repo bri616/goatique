@@ -4,10 +4,14 @@
 </head>
 
 <body>
-  <form>
-    <table>
-      <tr><td>Name </td><td><input name="product[name]" value= "<%=@product.name %>"</td></tr>
-    </table>
+
+  <form method="POST" action="/products/<%= @product.id %>"  >
+    <input type="hidden" name="_method" value="PUT"/>
+    <div>Name </div><div><input name="product[name]" value= "<%=@product.name %>" /></div>
+    <div>Description</div><div><input name="product[description]" value= "<%=@product.description%>" /></div>
+    <div>Price</div><div><input name="product[price]" value="<%=@product.price%>" /></div>
+    <div>Stock</div><div><input name="product[quantity]" value="<%=@product.quantity%>" /></div>
+    <input type="submit" value="Edit <%=@product.name%>" />
   </form>
 </body>
 </html>

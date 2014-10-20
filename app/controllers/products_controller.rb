@@ -26,6 +26,17 @@ class ProductsController < ApplicationController
     find_product
   end
 
+  def update
+    puts "*"*80, "got to update method"
+    find_product
+    if @product.update(product_params)
+      puts params.inspect
+      redirect_to "/products/#{@product.id}/about"
+    else
+      raise params.inspect
+    end
+  end
+
   def cart
     #render :"/cart"
   end
@@ -56,6 +67,10 @@ class ProductsController < ApplicationController
   private
     def find_product
       @product = Product.find(params[:id])
+    end
+
+    def product_params
+      params.require(:product).permit(:name, :description, :price, :quantity, :merchant_id, :categories)
     end
 
     def add_to_db(category_names)
