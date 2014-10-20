@@ -9,6 +9,17 @@
 </head>
 <body>
   <div class="header">
+
+    <div>
+
+      <% if @current_user %>
+        <%= @current_user.user_name %>
+        <%= "this is something" %>
+      <% end %>
+      <%= "show me" %>
+
+    </div>
+
     <span class="brand"><a href="/"><h1><strong>Goat</strong>ique</h1></a></span>
     <div class="nav">
       <ul class="horizontal-list">
