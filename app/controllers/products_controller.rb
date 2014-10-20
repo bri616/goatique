@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def add_to_database
     puts params.inspect
-    @product = Product.new(params.require(:product).permit(:name, :description, :price))
+    @product = Product.new(params.require(:product).permit(:name, :description, :price, :quantity))
     category_names = params.require(:product).permit(:categories)[:categories]
     add_to_db(category_names)
     @product.save
