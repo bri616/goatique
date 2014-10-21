@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "/merchants/new",       to: "merchants#new",    as: :merchant_signup
   post "/merchants/create",   to: "merchants#create", as: :merchant_create
   get "/merchants/:id",       to: "merchants#show",   as: :merchant_show
+  get "/merchants/:id/edit",  to: "merchants#edit",   as: :merchant_edit
+  patch "/merchants/:id/update", to: "merchants#update", as: :merchant_update
 
 #######################################################################
 

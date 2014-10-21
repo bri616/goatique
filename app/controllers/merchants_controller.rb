@@ -1,4 +1,6 @@
 class MerchantsController < ApplicationController
+  # skip_before_action :current_user, except: [:edit, :update]
+  # this currently breaks login because ???
 
   def index
     @merchants = Merchant.all
@@ -20,6 +22,22 @@ class MerchantsController < ApplicationController
   def show
     find_merchant
   end
+
+  def edit
+    find_merchant
+  end
+
+  def update
+    find_merchant
+    if @merchant == @current_user
+      if @merchant.update(params.require(:merchant).permit(:shop_name, :description))
+        redirect_to merchant_show_path
+      else
+        render :edit
+      end
+    end
+  end
+
 
   private
     def merchant_params
