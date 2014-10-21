@@ -4,9 +4,8 @@
 </head>
 
 <body>
-<h2> About Product </h2>
   <h3><%= @product.name %></h3>
-  <% if @product.merchant.id == session[:pineapple_id] %>
+  <% if @product.merchant == @current_user %>
     <%= button_to "Edit", product_edit_path, method: :get %>
   <% end %>
 

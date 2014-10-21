@@ -16,9 +16,8 @@
     <div><input type="text" name="product[categories]" /></p></div>
   <div><p>Stock</div>
     <div><input type="text" name="product[quantity]" /></p></div>
-    <div><input type="text" name="product[merchant_id]" /></p></div>
-    <!--This line is temporary until we implement login and new product is associated with logged-in merchant automagically-->
+    <input type="hidden" name="product[merchant_id]" value = <%= @current_user.id %> />
 
-  <tr><td><button name="[button]">Submit</button></td></tr>
+  <button name="[button]">Submit</button>
 
 <form>

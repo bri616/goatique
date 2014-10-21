@@ -8,8 +8,11 @@ class ProductsController < ApplicationController
     @product = Product.new(params.require(:product).permit(:name, :description, :price, :quantity, :merchant_id))
     category_names = params.require(:product).permit(:categories)[:categories]
     add_to_db(category_names)
-    @product.save
-    redirect_to "/products/index"
+    if @product.save
+      redirect_to "/products/index"
+    else
+      render :new
+    end
   end
 
   def index
