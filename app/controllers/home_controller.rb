@@ -9,7 +9,12 @@ class HomeController < ApplicationController
       # check pizza_name to see if it exists in DB
       if mango = Merchant.find_by(user_name: params[:pringle] [:pizza_name])
         # if exists, assign a new key in the sessions hash (key > pineappleid / value > merchant id associated with username)
-        session[:pineapple_id] = mango.id
+        params.require(:pringle).permit(:pizza_pass)
+        if mango.authenticate(params[:pringle][:pizza_pass])
+          session[:pineapple_id] = mango.id
+        else
+          raise "wrong password"
+        end
         # raise @current_user.inspect
       else
         raise "pineapple erroar"
