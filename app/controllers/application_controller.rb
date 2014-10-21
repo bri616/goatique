@@ -8,18 +8,18 @@ class ApplicationController < ActionController::Base
 
   def current_user
 
-    if session[:pineapple_id]
-      @current_user = Merchant.find(session[:pineapple_id])
+    if session[:loggedin_merchant_id]
+      @current_user = Merchant.find(session[:loggedin_merchant_id])
     end
 
-    # if @current_user = Merchant.find(session[:pineapple_id])
+    # if @current_user = Merchant.find(session[loggedin_merchant_id])
     #   return true
     # else
     #   return false
     # end
 
 
-    # unless @current_user = Merchant.find(session[:pineapple_id])
+    # unless @current_user = Merchant.find(session[loggedin_merchant_id])
     #   redirect_to "/home/login"
     # end
 

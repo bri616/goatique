@@ -7,12 +7,12 @@ class HomeController < ApplicationController
     # get pizza_name from input form
     params.require(:pringle).permit(:pizza_name)
       # check pizza_name to see if it exists in DB
-      if mango = Merchant.find_by(user_name: params[:pringle] [:pizza_name])
+      if loggedin_merchant = Merchant.find_by(user_name: params[:pringle] [:pizza_name])
         # if exists, assign a new key in the sessions hash (key > pineappleid / value > merchant id associated with username)
         # only if the password is authenticated
         params.require(:pringle).permit(:pizza_pass)
-        if mango.authenticate(params[:pringle][:pizza_pass])
-          session[:pineapple_id] = mango.id
+        if loggedin_merchant.authenticate(params[:pringle][:pizza_pass])
+          session[:loggedin_merchant_id] = loggedin_merchant.id
         else
           raise "wrong password"
         end
@@ -24,7 +24,7 @@ class HomeController < ApplicationController
   end
 
   def logout
-    session[:pineapple_id] = nil
+    session[:loggedin_merchant_id] = nil
     redirect_to root_path
   end
 
