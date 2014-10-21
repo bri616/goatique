@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
 
-
-
-
-
 #######################################################################
 
   # Home
+  root 'home#index'
 
   get "/",                   to: "home#index"
   get "/home/index",         to: "home#search"
   get "/home/login",         to: "home#login"
   post "/home/login",        to: "home#authenticate_user"
+  get "/home/logout",        to: "home#logout", as: :log_out
 
   # Merchants - Create, view all,
 
@@ -40,7 +38,9 @@ Rails.application.routes.draw do
 
   # Order Items
 
+  post "/order_items/:id",            to: "order_items#create"
   post "/order_items",            to: "order_items#create"#, as: :order_items
+
 
   # Products - Create, view all
 

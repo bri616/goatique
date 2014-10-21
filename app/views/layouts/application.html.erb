@@ -10,14 +10,21 @@
 <body>
   <div class="header">
 
-    <div>
-
+    <div class="login-box">
       <% if @current_user %>
-        <%= @current_user.user_name %>
-        <%= "this is something" %>
+      <div class="logged-in">
+        <%= "Logged in as #{@current_user.user_name}" %>
+        <%= link_to "Sign Out", log_out_path %>
+      </div>
+      <% else %>
+      <div class="login-form">
+        <form action="/home/login" method="POST">
+          Username:<input type="text" name="pringle[pizza_name]"/>
+          Password:<input type="password" name="pringle[pizza_pass]"/>
+          <button>SUBMIT</button>
+        </form>
+      </div>
       <% end %>
-      <%= "show me" %>
-
     </div>
 
     <span class="brand"><a href="/"><h1><strong>Goat</strong>ique</h1></a></span>

@@ -1,10 +1,17 @@
 class OrderItemsController < ApplicationController
 
   def create
-    puts
-    @order_item = OrderItem.new(order_item_params)
+    # @order_item = OrderItem.new(order_item_params)
+    # if the order already includes an order_item for this product
+    if Order.find(order_item_params[:order_id]).products.include? Product.find(order_item_params[:product_id])
+      raise "You already have that item in your cart!  Update the qty there!"
+    else
+      # create a new order item with order_item params
+      @order_item = OrderItem.new(order_item_params)
+    end
+
     if @order_item.save
-      redirect_to cart_path
+      redirect_to orders_path
     else
       # render :new (we want this to render the same page they were on with errors)
       raise @order_item.errors
@@ -44,5 +51,10 @@ class OrderItemsController < ApplicationController
   def order_params
     params.require(:mango).permit(:product_quantity) #can i access the attributes of the other models that Orders is associated with, such as price, etc?
   end
+
+  def order_item_params
+    params.permit(:product_id, :order_id)
+  end
+
 
 end
