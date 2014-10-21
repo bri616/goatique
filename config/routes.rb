@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
-=======
 #######################################################################
 
->>>>>>> e2bef30d067ab11c566f454f346b7b74c5ab1813
   # Home
   root 'home#index'
 
