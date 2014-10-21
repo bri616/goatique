@@ -5,9 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def add_to_database
-    @product = Product.new(params.require(:product).permit(:name, :description, :price, :quantity, :merchant_id))
-    category_names = params.require(:product).permit(:categories)[:categories]
-    add_to_db(category_names)
+    @product = Product.new(product_params)
+    add_to_db(product_categories)
     if @product.save
       redirect_to "/products/index"
     else
@@ -30,13 +29,13 @@ class ProductsController < ApplicationController
   end
 
   def update
-    puts "*"*80, "got to update method"
     find_product
-    if @product.update(product_params)
-      puts params.inspect
+    @product.update(product_params)
+    add_to_db(product_categories)
+    if @product.save
       redirect_to "/products/#{@product.id}/about"
     else
-      raise params.inspect
+      render :edit
     end
   end
 
@@ -73,7 +72,11 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :description, :price, :quantity, :merchant_id, :categories)
+      params.require(:product).permit(:name, :description, :price, :quantity, :merchant_id)
+    end
+
+    def product_categories
+      params.require(:product).permit(:categories)[:categories]
     end
 
     def add_to_db(category_names)

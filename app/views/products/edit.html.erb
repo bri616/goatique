@@ -10,6 +10,7 @@
     <div>Name </div><div><input name="product[name]" value= "<%=@product.name %>" /></div>
     <div>Description</div><div><input name="product[description]" value= "<%=@product.description%>" /></div>
     <div>Price</div><div><input name="product[price]" value="<%=@product.price%>" /></div>
+    <div>Categories</div><div><input name="product[categories]" value="<%=category_string(@product.categories)%>" /></div>
     <div>Stock</div><div><input name="product[quantity]" value="<%=@product.quantity%>" /></div>
     <input type="submit" value="Edit <%=@product.name%>" />
   </form>
