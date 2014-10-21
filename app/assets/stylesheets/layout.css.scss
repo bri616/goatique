@@ -1,5 +1,6 @@
 // layout styling here
 
+
 html {
   background: #8cd6fc;
   font-family: sans-serif;
@@ -8,6 +9,7 @@ html {
 
 .horizontal-list > li{
   padding: 20px;
+  padding-bottom: 15px;
   font-family: sans-serif;
   color: white;
   display: inline-block;
@@ -15,11 +17,14 @@ html {
 
 }
 
-
 td {
   padding: 10px;
 }
 
+a:link, a:visited {
+  color: rgb(98, 144, 156);
+  text-decoration: underline;
+}
 
 
 // header styling here
@@ -38,11 +43,11 @@ td {
   position: relative;
   height: 150px;
   margin-top: 10px;
-  width: 400px;
+  width: 375px;
   color: white;
   background-image: url('goatique-logo.png');
   background-repeat: no-repeat;
-  background-position: 30px 5px;
+  background-position: 1px 5px;
 }
 
 .brand h1{
@@ -63,7 +68,7 @@ td {
   display: inline-block;
   float: right;
   position: absolute;
-  bottom: 10px;
+  bottom: 50px;
   right: 30px;
   border-bottom: 3px solid white;
 }
@@ -81,6 +86,11 @@ td {
 
 .nav a:hover {
   color: #29829d;
+}
+
+.login-box {
+  float: right;
+  margin: 10px;
 }
 
 

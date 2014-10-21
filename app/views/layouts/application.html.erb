@@ -9,12 +9,31 @@
 </head>
 <body>
   <div class="header">
+
+    <div class="login-box">
+      <% if @current_user %>
+      <div class="logged-in">
+        <%= "Logged in as "+@current_user.user_name%>
+        <%= link_to "Sign Out", log_out_url %>
+      </div>
+      <% else %>
+      <div class="login-form">
+        <form action="/home/login" method="POST">
+          Username:<input type="text" name="pringle[pizza_name]"/>
+          Password:<input type="password" name="pringle[pizza_pass]"/>
+          <button>SUBMIT</button>
+        </form>
+      </div>
+      <% end %>
+    </div>
+
     <span class="brand"><a href="/"><h1><strong>Goat</strong>ique</h1></a></span>
     <div class="nav">
       <ul class="horizontal-list">
         <li><a href="/merchants/">Merchants</a></li>
         <li><a href="#">Categories</a></li>
         <li><a href="/merchants/new">Register</a></li>
+        <li><a href="/home/login">Login</a></li>
       </ul>
     </div>
   </div>
