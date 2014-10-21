@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery with: :exception
 
 
+  def current_order
+    @current_order = Order.find(session[:order_id]) if session[:current_order_id]    
+  end
+
 
   def sign_in
 
