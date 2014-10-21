@@ -4,15 +4,7 @@ class OrderItemsController < ApplicationController
     # @order_item = OrderItem.new(order_item_params)
     # if the order already includes an order_item for this product
     if Order.find(order_item_params[:order_id]).products.include? Product.find(order_item_params[:product_id])
-      # add one to the order item associated with that product
-      Order.find(order_item_params[:order_id]).order_items.each do |order_item|
-        puts order_item.product_id
-        puts order_item_params[:product_id]
-        if order_item.product_id == order_item_params[:product_id]
-          @order_item = order_item
-        end
-      end
-      @order_item.update(product_quantity: @order_item[:product_quantity]+1)
+      raise "You already have that item in your cart!  Update the qty there!"
     else
       # create a new order item with order_item params
       @order_item = OrderItem.new(order_item_params)
