@@ -11,13 +11,16 @@
   <div class="header">
 
     <div>
-
       <% if @current_user %>
-        <%= @current_user.user_name %>
-        <%= "this is something" %>
+        <%= "Logged in as "+@current_user.user_name%>
+        <%= link_to "Sign Out", log_out_url %>
+      <% else %>
+        <form action="/home/login" method="POST">
+          Username:<input type="text" name="pringle[pizza_name]"/>
+          Password:<input type="password" name="pringle[pizza_pass]"/>
+          <button>SUBMIT</button>
+        </form>
       <% end %>
-      <%= "show me" %>
-
     </div>
 
     <span class="brand"><a href="/"><h1><strong>Goat</strong>ique</h1></a></span>

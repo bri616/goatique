@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
 
-
-
-
-
 #######################################################################
 
   # Home
+  root 'home#index'
 
   get "/",                   to: "home#index"
   get "/home/index",         to: "home#search"
   get "/home/login",         to: "home#login"
   post "/home/login",        to: "home#authenticate_user"
+  get "/home/logout",        to: "home#logout", as: :log_out
 
   # Merchants - Create, view all,
 
