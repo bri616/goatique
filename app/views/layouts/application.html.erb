@@ -28,7 +28,7 @@
     </div>
 
     <div class="cart-status">
-      Your Cart has <%= @current_order ? @current_order.order_items.count : "0" %> items.
+      Your Cart has <%= @current_order ? @current_order.total_number_of_products : "0" %> items.
       ... and it is order # <%= @current_order ? @current_order.id : "nil" %>
     </div>
 

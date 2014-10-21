@@ -3,7 +3,6 @@ class Order < ActiveRecord::Base
   has_many :order_items
   has_many :products, through: :order_items
   attr_accessor :total_number_of_products
-  before_filter :total_number_of_products
 
   def sorted_order_items
     order_items.order :product_id
