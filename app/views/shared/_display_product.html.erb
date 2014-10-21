@@ -12,6 +12,9 @@
     <span class="merchant-shop-link">
       <a href="/merchants/<%= product.merchant.id %>"><%= product.merchant.shop_name %></a>
     </span>
+    <% if product.merchant == @current_user %>
+      <span class="product-edit-link"><%= link_to("Edit", product_edit_path(product.id)) %></span>
+    <% end %>
   </div>
 
   <div class="product-description">
