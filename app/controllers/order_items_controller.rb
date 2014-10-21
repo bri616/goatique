@@ -53,6 +53,8 @@ class OrderItemsController < ApplicationController
     end
   end
 
+  private
+
   def order_params
     params.require(:mango).permit(:product_quantity) #can i access the attributes of the other models that Orders is associated with, such as price, etc?
   end

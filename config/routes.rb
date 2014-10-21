@@ -19,8 +19,9 @@ Rails.application.routes.draw do
   get "/merchants/:id",       to: "merchants#show"
 
 #######################################################################
-
-  get "/orders",                 to: "orders#index"
+  post "/orders/checkout",       to: "orders#checkout", as: :checkout
+  get "/orders",                to: "orders#index"
+  # post "/orders",               to: "order_items#update_stock"
   # get 'orders/update'
   get  "/order_items/:id/edit", to: "order_items#edit",   as: :edit_order_items
   put  "/order_items/:id",      to: "order_items#update", as: :order_items
