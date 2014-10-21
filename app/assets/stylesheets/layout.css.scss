@@ -89,8 +89,22 @@ a:link, a:visited {
 }
 
 .cart-status {
+  background: pink;
   float: right;
   margin: 10px;
+  width: 100px;
+  height: 80px;
+  background-image: url('goat-in-cart.gif');
+  background-repeat: no-repeat;
+  // background-position: 1px 5px;
+}
+
+.cart-status > .num-of-items{
+  background: yellow;
+  display: inline-block;
+  font-size: 30pt;
+  float: right;
+  vertical-align: middle;
 }
 
 .login-box {

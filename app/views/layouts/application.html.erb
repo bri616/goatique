@@ -28,8 +28,9 @@
     </div>
 
     <div class="cart-status">
-      Your Cart has <%= @current_order ? @current_order.total_number_of_products : "0" %> items.
-      ... and it is order # <%= @current_order ? @current_order.id : "nil" %>
+      <div class="num-of-items">
+      <%= @current_order ? @current_order.total_number_of_products : "0" %>
+      </div>
     </div>
 
     <span class="brand"><a href="/"><h1><strong>Goat</strong>ique</h1></a></span>
