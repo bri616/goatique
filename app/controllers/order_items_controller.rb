@@ -20,16 +20,16 @@ class OrderItemsController < ApplicationController
 
   def edit
     @order_item = OrderItem.find(params[:id])
-
   end
 
-  # def update_stock
-  #   @order_item = OrderItem.find(params[:id])
-  #   if @order_item.product_quantity >= 1
-  #     @order_item.product.quantity - @order_item.product_quantity
-  #   else
-  #   end
-  # end
+  def update_stock
+    @order_item = OrderItem.find(params[:id])
+    if @order_item.product_quantity >= 1
+      new_stock = @order_item.product.quantity - @order_item.product_quantity
+      @order_item.product.update(quantity:new_stock)
+    else
+    end
+  end
 
 
   def update
