@@ -4,4 +4,23 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery with: :exception
 
 
+
+  def sign_in
+
+    if @current_user = Merchant.find(session[:pineapple_id])
+      return true
+    else
+      return false
+    end
+
+
+    # unless @current_user = Merchant.find(session[:pineapple_id])
+    #   redirect_to "/home/login"
+    # end
+
+  end
+
+
+
+
 end
