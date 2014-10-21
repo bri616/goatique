@@ -6,6 +6,9 @@
 <body>
 <h2> About Product </h2>
   <h3><%= @product.name %></h3>
+  <% if @product.merchant.id == session[:pineapple_id] %>
+    <%= link_to "Edit", product_edit_path %>
+  <% end %>
   <blockquote> <%= @product.description %> </blockquote>
   Sold by <a href="/merchants/<%= @product.merchant_id %>"><%=Merchant.find(@product.merchant_id).shop_name %></a> for <%= number_to_currency(@product.price) %><br>
   <%= @product.quantity %> in stock <br>
