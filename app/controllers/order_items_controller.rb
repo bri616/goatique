@@ -2,12 +2,14 @@ class OrderItemsController < ApplicationController
 
   def create
     # @order_item = OrderItem.new(order_item_params)
+
     # if the order already includes an order_item for this product
     if Order.find(order_item_params[:order_id]).products.include? Product.find(order_item_params[:product_id])
       raise "You already have that item in your cart!  Update the qty there!"
     else
       # create a new order item with order_item params
       @order_item = OrderItem.new(order_item_params)
+      @order_item.update(product_quantity: 1)
     end
 
     if @order_item.save
