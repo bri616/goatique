@@ -51,7 +51,8 @@ Rails.application.routes.draw do
   post "/products/new",       to: "products#add_to_database", as: :product_create
   get  "/products/new",       to: "products#new",             as: :product_new
   get  "/products/:id/edit",      to: "products#edit",            as: :product_edit
-  put  "/products/:id/",  to: "products#update"
+  put  "/products/:id/",  to: "products#update",              as: :product_update
+  get "/products/:id/delete", to: "products#delete",          as: :product_delete
 
   # Categories - View
 

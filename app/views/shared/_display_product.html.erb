@@ -14,6 +14,7 @@
     </span>
     <% if product.merchant == @current_user %>
       <span class="product-edit-link"><%= link_to("Edit", product_edit_path(product.id)) %></span>
+      <span class="product-delete-link"><%= link_to("Delete", product_delete_path(product.id)) %></span>
     <% end %>
   </div>
 
