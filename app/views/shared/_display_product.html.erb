@@ -28,6 +28,9 @@
 
   <div class="add-to-cart">
     <% session[:order_id] = Order.create().id if !session[:order_id] %>
-    <%= button_to("Add to Cart", {:controller => "order_items", :action => "create", :product_id => product.id, :order_id => session[:order_id]}) %>
+    <%= button_to("Add to Cart", {
+      :controller => "order_items",
+      :action => "create", :product_id => product.id,
+      :order_id => session[:order_id]}) %>
   </div>
 </div>
