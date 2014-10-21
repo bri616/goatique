@@ -3,9 +3,8 @@
 </head>
 
 <body>
-  <%= @merchant.user_name %>
-
-  <h2><%= @merchant.shop_name %></h2>
+  <h2>Merchant user name: <%= @merchant.user_name %></h2>
+  <h2>Merchant shop name: <%= @merchant.shop_name %></h2>
     <% @merchant.products.each do |product| %>
       <%= render "shared/display_product", product: product %>
     <% end %>
