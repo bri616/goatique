@@ -13,14 +13,17 @@ Rails.application.routes.draw do
 
   # Merchants - Create, view all,
 
-  get "/merchants/",          to: "merchants#index"
-  get "/merchants/new",       to: "merchants#new"
-  post "/merchants/create",   to: "merchants#create"
-  get "/merchants/:id",       to: "merchants#show"
+  get "/merchants/",          to: "merchants#index",  as: :merchants_home
+  get "/merchants/new",       to: "merchants#new",    as: :merchant_signup
+  post "/merchants/create",   to: "merchants#create", as: :merchant_create
+  get "/merchants/:id",       to: "merchants#show",   as: :merchant_show
+  get "/merchants/:id/edit",  to: "merchants#edit",   as: :merchant_edit
+  patch "/merchants/:id/update", to: "merchants#update", as: :merchant_update
 
 #######################################################################
-
-  get "/orders",                 to: "orders#index"
+  post "/orders/checkout",       to: "orders#checkout", as: :checkout
+  get "/orders",                to: "orders#index"
+  # post "/orders",               to: "order_items#update_stock"
   # get 'orders/update'
   get  "/order_items/:id/edit", to: "order_items#edit",   as: :edit_order_items
   put  "/order_items/:id",      to: "order_items#update", as: :order_items
@@ -44,10 +47,13 @@ Rails.application.routes.draw do
 
   # Products - Create, view all
 
-  get  "/products/:id/about", to: "products#about"
-  get  "/products/index",     to: "products#index"
-  post "/products/new",       to: "products#add_to_database"
-  get  "/products/new",       to: "products#new"
+  get  "/products/:id/about", to: "products#about",           as: :product_show
+  get  "/products/index",     to: "products#index",           as: :products_home
+  post "/products/new",       to: "products#add_to_database", as: :product_create
+  get  "/products/new",       to: "products#new",             as: :product_new
+  get  "/products/:id/edit",      to: "products#edit",            as: :product_edit
+  put  "/products/:id/",  to: "products#update",              as: :product_update
+  get "/products/:id/delete", to: "products#delete",          as: :product_delete
 
   # Categories - View
 

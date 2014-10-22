@@ -5,12 +5,18 @@ class ProductsController < ApplicationController
   end
 
   def add_to_database
-    puts params.inspect
-    @product = Product.new(params.require(:product).permit(:name, :description, :price, :quantity))
-    category_names = params.require(:product).permit(:categories)[:categories]
-    add_to_db(category_names)
-    @product.save
-    redirect_to "/products/index"
+    puts "*"*80
+    @product = Product.new(product_params)
+    puts "&"*80
+    puts @product.inspect
+    puts "$"*80
+    add_to_db(product_categories, new_categories)
+    # @product.categories << Category.find(product_categories)
+    if @product.save
+      redirect_to "/products/index"
+    else
+      render :new
+    end
   end
 
   def index
@@ -21,6 +27,28 @@ class ProductsController < ApplicationController
   def about
     @product = Product.find(params[:id])
     render :about
+  end
+
+  def edit
+    find_product
+  end
+
+  def update
+    # raise params.inspect
+    find_product
+    @product.update(product_params)
+    add_to_db(product_categories, new_categories)
+    if @product.save
+      redirect_to "/products/#{@product.id}/about"
+    else
+      render :edit
+    end
+  end
+
+  def delete
+    find_product
+    @product.destroy
+    redirect_to "/merchants/#{@product.merchant_id}"
   end
 
   def cart
@@ -51,27 +79,27 @@ class ProductsController < ApplicationController
   # end
 
   private
-  def find_product
-    @product = Product.find(params[:id])
-  end
-
-  def add_to_db(category_names)
-    if category_names.include?(",")
-      category_names = category_names.split(",")
-    else
-      category_names = category_names.split
+    def find_product
+      @product = Product.find(params[:id])
     end
 
-    category_names.each do |category_name|
-      category_name = category_name.strip.downcase
-      cat = Category.find_by(name: category_name)
-      if cat
-        @product.categories << cat
-      else
-        @product.categories << Category.create(name: category_name)
-      end
+    def product_params
+      params.require(:product).permit(:name, :description, :price, :quantity, :merchant_id)
     end
-  end
 
+    def product_categories
+      params.require(:product).permit(categories: [])[:categories] # must specify that the categories key will point to an array of categories, because otherwise crazy shit happens. I am not too clear on what's happening here but it works
+    end
 
+    def new_categories
+      params.require(:product).permit(:category_strings)[:category_strings]
+    end
+
+    def add_to_db(cats, strings)
+      @product.categories.destroy_all
+      cats.each {|cat| @product.categories << Category.find(cat)} if cats
+
+      strings_array = strings.include?(", ") ? strings.split(", ") : strings.split(" ")
+      strings_array.each { |cat| @product.categories << Category.create(name: cat)}
+    end
 end
