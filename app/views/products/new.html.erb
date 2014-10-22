@@ -17,6 +17,8 @@
        <input type="checkbox" name="product[categories][]" value=<%= cat.id %> ><%= cat.name %>
        <% end %>
     </div>
+    <div>Add new category</div>
+    <div><input name="product[category_strings]" /></div>
   <div><p>Stock</div>
     <div><input type="text" name="product[quantity]" /></p></div>
     <input type="hidden" name="product[merchant_id]" value = <%= @current_user.id %> />
