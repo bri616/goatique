@@ -68,9 +68,9 @@ Rails.application.routes.draw do
   get  "/products/index",     to: "products#index",           as: :products_home
   post "/products/new",       to: "products#add_to_database", as: :product_create
   get  "/products/new",       to: "products#new",             as: :product_new
-  get  "/products/:id/edit",      to: "products#edit",            as: :product_edit
+  get  "/products/:id/edit",      to: "products#edit",        as: :product_edit
   put  "/products/:id/",  to: "products#update",              as: :product_update
-  get "/products/:id/delete", to: "products#delete",          as: :product_delete
+  get   "/products/:id/delete", to: "products#delete",        as: :product_delete
 
 
   # Categories - View
@@ -80,7 +80,9 @@ Rails.application.routes.draw do
 
   # Reviews
 
-  get "/reviews/:id/index",     to: "reviews#index"
+  get   "/reviews/:id/index",     to: "reviews#add"
+  post  "/reviews/:id/index",     to: "reviews#add"
+  get   "reviews/:id/add",        to: "reviews#add"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -9,6 +9,11 @@
     <%= button_to "Edit", product_edit_path, method: :get %>
   <% end %>
 
+<form action= "/reviews/:id/index" method= "POST">
+  <button>Add Review</button>
+</form>
+
+
   <blockquote> <%= @product.description %> </blockquote>
   Sold by <a href="/merchants/<%= @product.merchant_id %>"><%=@product.merchant.shop_name %></a> for <%= number_to_currency(@product.price) %><br>
   <%= @product.quantity %> in stock <br>
@@ -25,9 +30,6 @@
           <a href="/categories/<%= category.id %>"><%= category.name %><br>
         <% end %> <br>
 <!-- <%= button_to "Add to Cart", "/#{@product.id}/cart" %><form method="POST" action="/id:cart" > -->
-<form action= "/reviews">
-
-</form>
 
 
 
