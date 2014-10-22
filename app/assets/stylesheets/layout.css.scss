@@ -88,14 +88,50 @@ a:link, a:visited {
   color: #29829d;
 }
 
-.cart-status {
+.cartfull {
   float: right;
   margin: 10px;
+  width: 100px;
+  height: 80px;
+  line-height: 80px;
+  background-image: url('goat-in-cart.gif');
+  background-repeat: no-repeat;
+  // background-position: 1px 5px;
+}
+
+.cart {
+  margin: 10px;
+  width: 100px;
+  height: 80px;
+  line-height: 80px;
+  display: inline-block;
+  background-image: url('empty-cart.png');
+  background-repeat: no-repeat;
+  // background-position: 1px 5px;
+}
+
+.num-of-items{
+  display: inline-block;
+  font-size: 30pt;
+  float: right;
+  vertical-align: middle;
 }
 
 .login-box {
   float: right;
+  display: inline-block;
+  line-height: normal;
   margin: 10px;
+  border: 2px;
+  padding: 10px;
+  border-style: solid;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.login-box a:hover {
+  color: #29829d;
+  font-family: 'Merriweather Sans', sans-serif;
+
 }
 
 // content styling here

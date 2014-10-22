@@ -1,10 +1,11 @@
 
 .product-container {
+  padding: 10px;
   display: inline-block;
   border: 2px solid #29829d;
   width: 28%;
   margin: 20px;
-  height: 500px;
+  height: auto;
   vertical-align: top;
   position: relative;
 }
@@ -31,6 +32,6 @@
 }
 
 .product-container > .product-price {
-  position: absolute;
+  position: relative;
   bottom: 0;
 }
