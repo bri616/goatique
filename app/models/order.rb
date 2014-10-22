@@ -4,9 +4,10 @@ class Order < ActiveRecord::Base
   validates :mailing_address, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :card_number, presence: true
   validates :card_number, numericality: true
   validates :expiration_date, presence: true
-  
+
   has_many :merchants
   has_many :order_items
   has_many :products, through: :order_items
