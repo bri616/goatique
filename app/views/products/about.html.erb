@@ -9,20 +9,38 @@
     <%= button_to "Edit", product_edit_path, method: :get %>
   <% end %>
 
+<form action= "/reviews/:id/index" method= "POST">
+  <button>Add Review</button>
+</form>
+
+
   <blockquote> <%= @product.description %> </blockquote>
   Sold by <a href="/merchants/<%= @product.merchant_id %>"><%=@product.merchant.shop_name %></a> for <%= number_to_currency(@product.price) %><br>
   <%= @product.quantity %> in stock <br>
 
   <!-- why can't this go on one line? -->
+
+
+  Tags: <% @product.categories.each do |category| %>
+          <a href="/categories/<%= category.id %>"><%= category.name %>
+        <% end %><br>
+<%= button_to "Add to Cart", "/#{@product.id}/cart" %><form method="POST" action="/id:cart" >
+
   Categories: <% @product.categories.each do |category| %>
           <a href="/categories/<%= category.id %>"><%= category.name %></a><br>
         <% end %> <br>
+
+<!-- <%= button_to "Add to Cart", "/#{@product.id}/cart" %><form method="POST" action="/id:cart" > -->
+
+
+
 
 <% session[:order_id] = Order.create().id if !session[:order_id] %>
 <%= button_to("Add to Cart", {
   :controller => "order_items",
   :action => "create", :product_id => @product.id,
   :order_id => session[:order_id]}) %>
+>>>>>>> master
 
 </body>
 </html>
