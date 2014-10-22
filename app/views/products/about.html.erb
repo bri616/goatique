@@ -17,6 +17,7 @@
   Categories: <% @product.categories.each do |category| %>
           <a href="/categories/<%= category.id %>"><%= category.name %></a><br>
         <% end %> <br>
+
 <% session[:order_id] = Order.create().id if !session[:order_id] %>
 <%= button_to("Add to Cart", {
   :controller => "order_items",
