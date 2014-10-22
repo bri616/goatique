@@ -7,6 +7,7 @@ class Order < ActiveRecord::Base
   validates :card_number, presence: true
   validates :card_number, numericality: true
   validates :expiration_date, presence: true
+  # how to validate that it has at least one order item?
 
   has_many :merchants
   has_many :order_items
