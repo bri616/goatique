@@ -1,12 +1,15 @@
 class OrdersController < ApplicationController
 
   def index
-    @order = Order.first
+    @order = @current_order
   end
 
-
   def show
-    @order = Order.first
+    @order = @current_order
+  end
+
+  def checkout
+
   end
 
   def update_all

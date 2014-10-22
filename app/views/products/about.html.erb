@@ -4,13 +4,17 @@
 </head>
 
 <body>
-<h2> About Product </h2>
   <h3><%= @product.name %></h3>
+  <% if @product.merchant == @current_user %>
+    <%= button_to "Edit", product_edit_path, method: :get %>
+  <% end %>
+
   <blockquote> <%= @product.description %> </blockquote>
-  <%= number_to_currency(@product.price) %><br>
+  Sold by <a href="/merchants/<%= @product.merchant_id %>"><%=@product.merchant.shop_name %></a> for <%= number_to_currency(@product.price) %><br>
   <%= @product.quantity %> in stock <br>
 
   <!-- why can't this go on one line? -->
+
 
   Tags: <% @product.categories.each do |category| %>
           <a href="/categories/<%= category.id %>"><%= category.name %>
@@ -24,6 +28,8 @@
 <form action= "/reviews">
 
 </form>
+
+
 
 
 </body>

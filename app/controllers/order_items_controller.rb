@@ -2,12 +2,17 @@ class OrderItemsController < ApplicationController
 
   def create
     # @order_item = OrderItem.new(order_item_params)
+
     # if the order already includes an order_item for this product
     if Order.find(order_item_params[:order_id]).products.include? Product.find(order_item_params[:product_id])
-      raise "You already have that item in your cart!  Update the qty there!"
+      # update the order_item product_quantity to be incremented by one
+      @order_item = OrderItem.find_by_product_id_and_order_id(order_item_params[:product_id], order_item_params[:order_id])
+      old_prod_quant = @order_item.product_quantity
+      @order_item.update(product_quantity: old_prod_quant+1)
     else
       # create a new order item with order_item params
       @order_item = OrderItem.new(order_item_params)
+      @order_item.update(product_quantity: 1)
     end
 
     if @order_item.save
@@ -47,6 +52,8 @@ class OrderItemsController < ApplicationController
       redirect_to "/orders"
     end
   end
+
+  private
 
   def order_params
     params.require(:mango).permit(:product_quantity) #can i access the attributes of the other models that Orders is associated with, such as price, etc?
