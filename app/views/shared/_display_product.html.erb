@@ -12,6 +12,10 @@
     <span class="merchant-shop-link">
       <a href="/merchants/<%= product.merchant.id %>"><%= product.merchant.shop_name %></a>
     </span>
+    <% if product.merchant == @current_user %>
+      <span class="product-edit-link"><%= link_to("Edit", product_edit_path(product.id)) %></span>
+      <span class="product-delete-link"><%= link_to("Delete", product_delete_path(product.id)) %></span>
+    <% end %>
   </div>
 
   <div class="product-description">
@@ -22,7 +26,7 @@
     Price: <%= product.price %>
   </div>
 
-  Tags: <% product.categories.each do |category| %>
+  Categories: <% product.categories.each do |category| %>
           <%= category.name %>
         <% end %>
 

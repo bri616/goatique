@@ -12,8 +12,7 @@
 
     <div class="login-box">
       <% if @current_user %>
-      <div class="logged-in">
-        <%= "Logged in as #{@current_user.user_name}" %>
+      <div class="logged-in">Logged in as <%= link_to(@current_user.user_name, merchant_show_path(@current_user.id)) %>
         <%= link_to "Sign Out", log_out_path %>
       </div>
       <% else %>
@@ -37,7 +36,8 @@
     <div class="nav">
       <ul class="horizontal-list">
         <li><a href="/merchants/">Merchants</a></li>
-        <li><a href="#">Categories</a></li>
+        <li><a href="/categories/">Categories</a></li>
+        <li><a href="/products/index">Products</a></li>
         <li><a href="/merchants/new">Register</a></li>
         <li><a href="/home/login">Login</a></li>
       </ul>

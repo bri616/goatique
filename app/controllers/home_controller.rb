@@ -20,7 +20,7 @@ class HomeController < ApplicationController
       else
         raise "pineapple erroar"
       end
-    redirect_to "/"
+    redirect_to merchant_show_path(loggedin_merchant.id)
   end
 
   def logout
