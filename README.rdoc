@@ -1,12 +1,14 @@
 == README
 
-
 Authors:
-Stephanie Pi
-Bri Dotson
-Rachel Moshier
-Katie
-Rachelle Keblitis
+
+* Katie Bosch
+* Bri Dotson
+* Rachelle Keblitis
+* Rachel Moshier
+* Stephanie Pi
+
+You can find Goatique online here: http://goatique.herokuapp.com/
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
