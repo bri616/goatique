@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  validates :merchant_id, numericality: true
+  validates :name, presence: true
   belongs_to :merchant
   has_many :order_items
   has_many :orders, through: :order_items
