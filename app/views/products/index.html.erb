@@ -1,5 +1,17 @@
 <h2> Products!!! </h2>
 
 <%@products.each do |product| %>
-  <%= render "shared/display_product", product: product %>
+<%= render "shared/display_product", product: product %>
+
+<!-- Make partial work on products:
+
+# in database make sure all products have merchant ids
+2.1.2 :013 > Product.all.each do |thing|
+2.1.2 :014 > thing.merchant_id = 1
+2.1.2 :015?> thing.save
+2.1.2 :016?> end -->
+
+
+  <li><a href="<%=product.id %>/about"><%=product.name %></a></li>
+
 <% end %>
