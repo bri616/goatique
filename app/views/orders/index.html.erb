@@ -26,14 +26,29 @@
            <%end%>
 
          </div>
-
-
-
-
-
     <% end  %>
 
-  <%= @order.order_items.product.each do  %>
+
+
+  <% button = true %>
+  <% @order.sorted_order_items.each do |x| %>
+    <% total = 0 %>
+    <% stock_total = 0 %>
+    <% if total =+ x.product_quantity > stock_total =+ x.product.quantity %>
+        <% button = false %>
+    <% end %>
+  <% end %>
+
+  <% if button %>
+    <%=button_to "Checkout", "/orders/checkout" %>
+  <% else %>
+    <%= "Some of your items don't have enough in stock. You can't checkout yet. " %>
+  <% end %>
+
+
+
+
+
 
 
 
