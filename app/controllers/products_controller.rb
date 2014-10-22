@@ -5,8 +5,13 @@ class ProductsController < ApplicationController
   end
 
   def add_to_database
+    puts "*"*80
     @product = Product.new(product_params)
+    puts "&"*80
+    puts @product.inspect
+    puts "$"*80
     add_to_db(product_categories)
+    # @product.categories << Category.find(product_categories)
     if @product.save
       redirect_to "/products/index"
     else
@@ -37,6 +42,12 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def delete
+    find_product
+    @product.destroy
+    redirect_to "/merchants/#{@product.merchant_id}"
   end
 
   def cart
@@ -76,24 +87,16 @@ class ProductsController < ApplicationController
     end
 
     def product_categories
-      params.require(:product).permit(:categories)[:categories]
+      params.require(:product).permit(categories: [])[:categories] # must specify that the categories key will point to an array of categories, because otherwise crazy shit happens. I am not too clear on what's happening here but it works
     end
 
-    def add_to_db(category_names)
-      if category_names.include?(",")
-        category_names = category_names.split(",")
-      else
-        category_names = category_names.split
-      end
+    def add_to_db(cats)
 
-      category_names.each do |category_name|
-        category_name = category_name.strip.downcase
-        cat = Category.find_by(name: category_name)
-        if cat
-          @product.categories << cat
-        else
-          @product.categories << Category.create(name: category_name)
-        end
+      puts "*"*80, cats.class, "&"*80
+
+      cats.each do |cat|
+        puts "*"*80, cat, "&"*80
+        @product.categories << Category.find(cat)
       end
     end
 

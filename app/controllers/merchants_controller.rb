@@ -1,6 +1,4 @@
 class MerchantsController < ApplicationController
-  # skip_before_action :current_user, except: [:edit, :update]
-  # this currently breaks login because ???
 
   def index
     @merchants = Merchant.all

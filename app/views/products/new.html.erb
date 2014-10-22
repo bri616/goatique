@@ -13,7 +13,10 @@
   <div><p>Price</div>
     <div><input type="text" name="product[price]" /></p></div>
   <div><p>Categories</div>
-    <div><input type="text" name="product[categories]" /></p></div>
+    <div><% Category.all.each do |cat| %>
+       <input type="checkbox" name="product[categories][]" value=<%= cat.id %> ><%= cat.name %>
+       <% end %>
+    </div>
   <div><p>Stock</div>
     <div><input type="text" name="product[quantity]" /></p></div>
     <input type="hidden" name="product[merchant_id]" value = <%= @current_user.id %> />
