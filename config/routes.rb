@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "/home/index",            to: "home#search"
   get "/home/login",            to: "home#login"
   post "/home/login",           to: "home#authenticate_user"
-  get "/home/logout",           gitto: "home#logout", as: :log_out
+  get "/home/logout",           to: "home#logout", as: :log_out
 
   # Merchants - Create, view all,
 
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
 #######################################################################
 
-  get "/orders",                to: "orders#index"
+  get "/orders",              to: "orders#index"
 
   get "/merchants/",          to: "merchants#index",  as: :merchants_home
   get "/merchants/new",       to: "merchants#new",    as: :merchant_signup
@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   put  "/order_items/:id",        to: "order_items#update", as: :order_items
 
   delete "/order_items/:id",    to: "order_items#destroy", as: :delete_order_items
+
 
 
 #######################################################################
@@ -83,7 +84,7 @@ Rails.application.routes.draw do
 
   get   "/reviews/:id/index",     to: "reviews#add"
   post  "/reviews/:id/index",     to: "reviews#add"
-  get   "reviews/:id/add",        to: "reviews#add"
+  get   "/reviews/:id/add",        to: "reviews#add"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
