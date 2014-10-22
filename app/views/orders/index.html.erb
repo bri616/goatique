@@ -33,15 +33,8 @@
 
     <% end  %>
 
+  <%= @order.order_items.product.each do  %>
 
 
-    <%=button_to "Checkout", "/orders/checkout" %>
-  <% @order.sorted_order_items.each do |banana| %>
-    <%total = 0 %>
-    <%stock_total = 0 %>
-    <% if total =+ banana.product_quantity > stock_total =+ banana.product.quantity     %>
-    <%= "Some of your items don't have enough in stock" %>
-    <% end %>
-  <% end %>
 
 </div>
