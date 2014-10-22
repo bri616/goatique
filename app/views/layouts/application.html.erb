@@ -29,7 +29,7 @@
 
     <div class="cart-status">
       <div class="num-of-items">
-      <%= @current_order ? @current_order.total_number_of_products : "0" %>
+      <%= @current_order.total_number_of_products if @current_order %>
       </div>
     </div>
 
