@@ -2,11 +2,11 @@
 
 Authors:
 
-Stephanie Pi
-Bri Dotson
-Rachel Moshier
-Katie Bosch
-Rachelle Keblitis
+* Katie Bosch
+* Bri Dotson
+* Rachelle Keblitis
+* Rachel Moshier
+* Stephanie Pi
 
 You can find Goatique online here: http://goatique.herokuapp.com/
 
