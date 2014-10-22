@@ -8,6 +8,10 @@ class OrdersController < ApplicationController
     @order = @current_order
   end
 
+  def checkout
+
+  end
+
   def update_all
     #method that updates all of the order quantities
   end
