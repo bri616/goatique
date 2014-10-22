@@ -97,7 +97,7 @@ class ProductsController < ApplicationController
 
     def add_to_db(cats, strings)
       @product.categories.destroy_all
-      cats.each {|cat| @product.categories << Category.find(cat)}
+      cats.each {|cat| @product.categories << Category.find(cat)} if cats
 
       strings_array = strings.include?(", ") ? strings.split(", ") : strings.split(" ")
       strings_array.each { |cat| @product.categories << Category.create(name: cat)}
