@@ -88,7 +88,7 @@ a:link, a:visited {
   color: #29829d;
 }
 
-.cart-status {
+.cartfull {
   float: right;
   margin: 10px;
   width: 100px;
@@ -99,7 +99,18 @@ a:link, a:visited {
   // background-position: 1px 5px;
 }
 
-.cart-status > .num-of-items{
+.cart {
+  float: right;
+  margin: 10px;
+  width: 100px;
+  height: 80px;
+  line-height: 80px;
+  background-image: url('empty-cart.png');
+  background-repeat: no-repeat;
+  // background-position: 1px 5px;
+}
+
+.num-of-items{
   display: inline-block;
   font-size: 30pt;
   float: right;
