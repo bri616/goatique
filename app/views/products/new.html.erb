@@ -11,7 +11,7 @@
   <div><p>Description</div>
     <div><input type="text" name="product[description]" /></p></div>
   <div><p>Price</div>
-    <div><input type="text" name="product[price]" /></p></div>
+    <div><input type="number" name="product[price]" step="0.01"/></p></div>
   <div><p>Categories</div>
     <div><% Category.all.each do |cat| %>
        <input type="checkbox" name="product[categories][]" value=<%= cat.id %> ><%= cat.name %>
