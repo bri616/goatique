@@ -23,11 +23,11 @@
   </div>
 
   <div class="product-price">
-    Price: <%= product.price %>
+    Price: <%= number_to_currency(product.price) %>
   </div>
 
   Categories: <% product.categories.each do |category| %>
-          <%= category.name %>
+          <a href="/categories/<%= category.id %>"><%= category.name %></a>
         <% end %>
 
   <div class="add-to-cart">
