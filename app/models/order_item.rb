@@ -2,12 +2,7 @@ class OrderItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :product
 
-  before_create :check_against_inventory
+  validates :product_quantity, :numericality => { :less_than_or_equal_to => lambda { |order_item| order_item.product.quantity }}
 
-  def check_against_inventory
-    if product_quantity > product.quantity
-      product_quantity = product.quantity
-    end
-  end
 
 end

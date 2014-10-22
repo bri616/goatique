@@ -39,10 +39,11 @@ class OrderItemsController < ApplicationController
 
   def update
     @order_item = OrderItem.find(params[:id])
+
     if @order_item.update(order_params)
-    redirect_to "/orders"
+      redirect_to "/orders"
     else
-      render :edit
+      raise "ERRROR"
     end
   end
 

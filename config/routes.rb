@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
 #######################################################################
   post "/orders/checkout",        to: "orders#checkout", as: :checkout
-  get "/orders",                  to: "orders#index"
+  get "/orders",                  to: "orders#index", as: :cart
   # post "/orders",               to: "order_items#update_stock"
   # get 'orders/update'
   get  "/order_items/:id/edit",   to: "order_items#edit",   as: :edit_order_items
