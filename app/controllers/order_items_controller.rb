@@ -43,7 +43,7 @@ class OrderItemsController < ApplicationController
     if @order_item.update(order_params)
       redirect_to "/orders"
     else
-      raise "ERRROR"
+      render 
     end
   end
 
