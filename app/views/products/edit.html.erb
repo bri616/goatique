@@ -12,7 +12,7 @@
     <div>Price</div><div><input name="product[price]" value="<%=@product.price%>" /></div>
     <div><p>Categories</div>
       <div><% Category.all.each do |cat| %>
-         <input type="checkbox" name="product[categories][]" value=<%= cat.id %> ><%= cat.name %>
+         <input type="checkbox" name="product[categories][]" value=<%= cat.id %> <%= "checked" if @product.categories.include? Category.find(cat.id)%> ><%= cat.name %> 
          <% end %>
       </div>
     <div>Stock</div><div><input name="product[quantity]" value="<%=@product.quantity%>" /></div>

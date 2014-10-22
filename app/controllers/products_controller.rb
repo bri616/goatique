@@ -91,14 +91,13 @@ class ProductsController < ApplicationController
     end
 
     def add_to_db(cats)
-
-      puts "*"*80, cats.class, "&"*80
-
+      @product.categories.destroy_all
       cats.each do |cat|
         puts "*"*80, cat, "&"*80
         @product.categories << Category.find(cat)
       end
     end
+
 
 
 end
