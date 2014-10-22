@@ -4,4 +4,9 @@ class ReviewsController < ApplicationController
 
   end
 
+  def add
+    @review = Reviews.new
+    render :index
+  end
+
 end
