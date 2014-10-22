@@ -1,0 +1,13 @@
+<html>
+<head>
+  <title>Edit profile</title>
+</head>
+
+<body>
+  <%= form_for @merchant, url: merchant_update_path do |f| %>
+    <%= f.text_field :shop_name %>
+    <%= f.text_field :description %>
+    <%= f.submit %>
+  <% end %>
+</body>
+</html>
