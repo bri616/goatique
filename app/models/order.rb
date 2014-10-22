@@ -9,7 +9,11 @@ class Order < ActiveRecord::Base
   end
 
   def total_number_of_products
-    order_items.collect(&:product_quantity).reduce :+
+    if order_items.collect(&:product_quantity).reduce :+
+      order_items.collect(&:product_quantity).reduce :+
+    else
+      0
+    end
   end
 
 end
