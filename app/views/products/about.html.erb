@@ -15,7 +15,7 @@
 
   <!-- why can't this go on one line? -->
   Categories: <% @product.categories.each do |category| %>
-          <a href="/categories/<%= category.id %>"><%= category.name %><br>
+          <a href="/categories/<%= category.id %>"><%= category.name %></a><br>
         <% end %> <br>
 <%= button_to "Add to Cart", "/#{@product.id}/cart" %><form method="POST" action="/id:cart" >
 
