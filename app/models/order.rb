@@ -5,7 +5,6 @@ class Order < ActiveRecord::Base
   validates :first_name, presence: true, if: :paid?
   validates :last_name, presence: true, if: :paid?
   validates :card_number, presence: true, if: :paid?
-  validates :card_number, numericality: true, if: :paid?
   validates :expiration_date, presence: true, if: :paid?
   # how to validate that it has at least one order item?
 
