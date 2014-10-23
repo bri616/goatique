@@ -20,13 +20,12 @@
 
        <div id="delete"><%= button_to "Delete", "/order_items/#{banana.id}", method: :delete %></div>
 
-           <%end%>
+
 
         <%= render "shared/error_messages", obj: banana %>
-    </div>
+    </div> <!-- /id delete -->
     <% end  %>
 
-        <% end  %>
 
   </div>
 
@@ -43,13 +42,6 @@
     <%=button_to "Checkout", "/orders/checkout" %>
   <% else %>
     <%= "Some of your items don't have enough in stock. You can't checkout yet. " %>
-  <% end %></div>
+  <% end %>
 
-
-
-
-
-
-
-
-</div>
+</div> <!-- /class checkout -->
