@@ -5,13 +5,23 @@ Rails.application.routes.draw do
   # Home
   root 'home#index'
 
-  get "/",                   to: "home#index"
-  get "/home/index",         to: "home#search"
-  get "/home/login",         to: "home#login"
-  post "/home/login",        to: "home#authenticate_user"
-  get "/home/logout",        to: "home#logout", as: :log_out
+  get "/",                      to: "home#index"
+  get "/home/index",            to: "home#search"
+  get "/home/login",            to: "home#login"
+  post "/home/login",           to: "home#authenticate_user"
+  get "/home/logout",           to: "home#logout", as: :log_out
 
   # Merchants - Create, view all,
+
+
+  get "/merchants/",            to: "merchants#index"
+  get "/merchants/new",         to: "merchants#new"
+  post "/merchants/create",     to: "merchants#create"
+  get "/merchants/:id",         to: "merchants#show"
+
+#######################################################################
+
+  get "/orders",              to: "orders#index"
 
   get "/merchants/",          to: "merchants#index",  as: :merchants_home
   get "/merchants/new",       to: "merchants#new",    as: :merchant_signup
@@ -24,41 +34,57 @@ Rails.application.routes.draw do
   post "/orders/checkout",        to: "orders#checkout", as: :checkout
   get "/orders",                  to: "orders#index", as: :cart
   # post "/orders",               to: "order_items#update_stock"
+
   # get 'orders/update'
   get  "/order_items/:id/edit",   to: "order_items#edit",   as: :edit_order_items
   put  "/order_items/:id",        to: "order_items#update", as: :order_items
 
-  delete "/order_items/:id",      to: "order_items#destroy", as: :delete_order_items
+  delete "/order_items/:id",    to: "order_items#destroy", as: :delete_order_items
+
+
 
 #######################################################################
   # Orders
 
-  get  "/cart",                   to: "products#cart"
-  post "/:id/cart",               to: "products#add_to_cart", as: :add_to_cart
-  get  "/orders/:id/edit",        to: "orders#edit", as: :edit_order
+  get  "/cart",                 to: "products#cart"
+  post "/:id/cart",             to: "products#add_to_cart", as: :add_to_cart
+  get  "/orders/:id/edit",      to: "orders#edit", as: :edit_order
   get "orders/update"
-  post "/orders/:id",             to: "orders#show"#, as: :cart
+  post "/orders/:id",           to: "orders#show"#, as: :cart
 
   # Order Items
 
-  post "/order_items/:id",            to: "order_items#create"
-  post "/order_items",            to: "order_items#create"#, as: :order_items
+  post "/order_items/:id",      to: "order_items#create"
+  post "/order_items",          to: "order_items#create"#, as: :order_items
 
 
   # Products - Create, view all
+
+
+  get  "/products/:id/about",   to: "products#about"
+  get  "/products/index",       to: "products#index"
+  post "/products/new",         to: "products#add_to_database"
+  get  "/products/new",         to: "products#new"
 
   get  "/products/:id/about", to: "products#about",           as: :product_show
   get  "/products/index",     to: "products#index",           as: :products_home
   post "/products/new",       to: "products#add_to_database", as: :product_create
   get  "/products/new",       to: "products#new",             as: :product_new
-  get  "/products/:id/edit",      to: "products#edit",            as: :product_edit
+  get  "/products/:id/edit",      to: "products#edit",        as: :product_edit
   put  "/products/:id/",  to: "products#update",              as: :product_update
-  get "/products/:id/delete", to: "products#delete",          as: :product_delete
+  get   "/products/:id/delete", to: "products#delete",        as: :product_delete
+
 
   # Categories - View
 
-  get "/categories/",         to: "categories#index"
-  get "/categories/:id",      to: "categories#show"
+  get "/categories/",           to: "categories#index"
+  get "/categories/:id",        to: "categories#show"
+
+  # Reviews
+
+  get   "/reviews/:id/index",     to: "reviews#add"
+  post  "/reviews/:id/index",     to: "reviews#add"
+  get   "/reviews/:id/add",        to: "reviews#add"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

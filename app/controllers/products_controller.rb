@@ -5,13 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def add_to_database
-    puts "*"*80
-    @product = Product.new(product_params)
-    puts "&"*80
-    puts @product.inspect
-    puts "$"*80
+    @product = Product.create(product_params)
     add_to_db(product_categories, new_categories)
-    # @product.categories << Category.find(product_categories)
     if @product.save
       redirect_to "/products/index"
     else
