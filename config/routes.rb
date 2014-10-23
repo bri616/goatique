@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
 #######################################################################
   post "/orders/checkout",        to: "orders#checkout", as: :checkout
+  post "/orders/final_countdown",        to: "orders#final_countdown"
+
   get "/orders",                  to: "orders#index", as: :orders
   # post "/orders",               to: "order_items#update_stock"
 
