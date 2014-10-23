@@ -20,12 +20,8 @@
 
        <%= button_to "Delete", "/order_items/#{banana.id}", method: :delete %>
 
-           <%if banana.product_quantity > banana.product.quantity %>
-               Sorry, we goan't have enough in stock. Current Stock:
-               <%= banana.product.quantity %>
-           <%end%>
-
-         </div>
+        <%= render "shared/error_messages", obj: banana %>
+    </div>
     <% end  %>
 
 
