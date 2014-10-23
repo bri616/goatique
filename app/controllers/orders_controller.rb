@@ -18,9 +18,13 @@ class OrdersController < ApplicationController
      #update @current_order with params from form
      @current_order.update(params.require(:order).permit(:first_name, :last_name, :mailing_address, :email, :card_number, :expiration_date))
 
-     raise @current_order.inspect
      #change status to paid
-     #if @current_order.update status: "Paid"
+     if @current_order.update(order_status: "Paid")
+       raise "Yay paid!"
+     else
+       raise "Boo not paid"
+     end
+
     #   iterate through order_items and update_stock based on #of items ordered(needs to be in model bc relates to DB)
     #   set current  session order id to nil
     #   redirect_to new confirmation page (maybe refactor to partial)
