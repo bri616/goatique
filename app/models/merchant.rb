@@ -5,7 +5,7 @@ class Merchant < ActiveRecord::Base
   validates :shop_name, uniqueness: true
   validates :email, presence: true
   validates :email, uniqueness: true
-  validates :email, format: {with: /@/}
+  validates :email, format: {with: /@\w*\./}
   has_secure_password
   has_many :products
   has_many :order_items, through: :products

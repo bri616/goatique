@@ -10,6 +10,7 @@
 
 <form action="/order_item/<%= @order_item.id %>" method="POST">
   <input type="hidden" name="_method" value="PUT"/>
+  <%= render :error_messages, obj: @order_item %>
 
   QTY <input type="text" name="mango[qty]" value="<%= @order_item.product_quantity %>"/>
 

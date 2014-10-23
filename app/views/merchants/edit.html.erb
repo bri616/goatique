@@ -5,9 +5,14 @@
 
 <body>
   <%= form_for @merchant, url: merchant_update_path do |f| %>
-    <%= f.text_field :shop_name %>
-    <%= f.text_field :description %>
-    <%= f.submit %>
+    <%= render 'shared/error_messages', obj: @merchant %>
+    <%= f.label :shop_name %>
+    <%= f.text_field :shop_name %><br>
+
+    <%= f.label :description %><br>
+    <%= f.text_area :description %><br>
+
+    <%= f.submit "Edit profile"%>
   <% end %>
 </body>
 </html>

@@ -16,15 +16,13 @@
 
   <blockquote> <%= @product.description %> </blockquote>
   Sold by <a href="/merchants/<%= @product.merchant_id %>"><%=@product.merchant.shop_name %></a> for <%= number_to_currency(@product.price) %><br>
-  <%= @product.quantity %> in stock <br>
+  <% if @product.quantity == 0 %>
+    Out of stock
+  <% else %>
+    <%= @product.quantity %> in stock
+  <% end %><br>
 
   <!-- why can't this go on one line? -->
-
-
-  Tags: <% @product.categories.each do |category| %>
-          <a href="/categories/<%= category.id %>"><%= category.name %>
-        <% end %><br>
-<%= button_to "Add to Cart", "/#{@product.id}/cart" %><form method="POST" action="/id:cart" >
 
   Categories: <% @product.categories.each do |category| %>
           <a href="/categories/<%= category.id %>"><%= category.name %></a><br>
