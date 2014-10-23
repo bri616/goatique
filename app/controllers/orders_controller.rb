@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
        #   set current session order id to nil
        session[:order_id] = nil
        redirect_to "/orders/confirmation"
-      #  render final_countdown_path
+
      else
        raise "Boo not paid"
        # else
