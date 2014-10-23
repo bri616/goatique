@@ -22,14 +22,18 @@ Rails.application.routes.draw do
 
 #######################################################################
   post "/orders/checkout",        to: "orders#checkout", as: :checkout
-  get "/orders",                  to: "orders#index", as: :cart
+  post "/orders/final_countdown",        to: "orders#final_countdown"
+  get  "/orders/confirmation"
+
+  get "/orders",                  to: "orders#index", as: :orders
+  # get "/orders",                  to: "orders#index", as: :cart
   # post "/orders",               to: "order_items#update_stock"
 
   # get 'orders/update'
   get  "/order_items/:id/edit",   to: "order_items#edit",   as: :edit_order_items
   put  "/order_items/:id",        to: "order_items#update", as: :order_items
 
-  delete "/order_items/:id",    to: "order_items#destroy", as: :delete_order_items
+  delete "/order_items/:id",      to: "order_items#destroy", as: :delete_order_items
 
 
 
