@@ -4,7 +4,7 @@
 </head>
 
 <body>
-  <form method="POST" action="/merchants/create">
+  <!-- <form method="POST" action="/merchants/create">
     <%= render 'shared/error_messages', obj: @merchant %>
     <table>
       <tr> <td>Email:</td> <td><input type="text" name="merchant[email]"/></td></tr>
@@ -17,7 +17,32 @@
   </table>
 
     <input type="submit" value="Sign up"/>
-  </form>
-  </form>
+  </form> -->
+
+  <%= form_for @merchant, url: merchant_create_path do |f| %>
+    <%= render 'shared/error_messages', obj: @merchant %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+    
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name %><br>
+
+    <%= f.label :shop_name %>
+    <%= f.text_field :shop_name %><br>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %><br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+
+    <%= f.label :password_confirmation, "Confirm password" %>
+    <%= f.password_field :password_confirmation %><br>
+
+    <%= f.submit "Create merchant account" %>
+  <% end %>
+
+
 </body>
 </html>

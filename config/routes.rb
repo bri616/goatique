@@ -13,16 +13,6 @@ Rails.application.routes.draw do
 
   # Merchants - Create, view all,
 
-
-  get "/merchants/",            to: "merchants#index"
-  get "/merchants/new",         to: "merchants#new"
-  post "/merchants/create",     to: "merchants#create"
-  get "/merchants/:id",         to: "merchants#show"
-
-#######################################################################
-
-  get "/orders",              to: "orders#index"
-
   get "/merchants/",          to: "merchants#index",  as: :merchants_home
   get "/merchants/new",       to: "merchants#new",    as: :merchant_signup
   post "/merchants/create",   to: "merchants#create", as: :merchant_create
