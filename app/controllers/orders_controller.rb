@@ -22,15 +22,14 @@ class OrdersController < ApplicationController
 
      if @current_order.update(order_status: "Paid")
        #   iterate through order_items and update_stock based on #of items ordered(needs to be in model bc relates to DB)
-       puts @current_order.order_items.first.product.quantity
        @current_order.order_items.each do |order_item|
          new_stock = order_item.product.quantity - order_item.product_quantity
          order_item.product.update(quantity: new_stock)
        end
-       puts @current_order.order_items.first.product.quantity
-
-       #   set current  session order id to nil
-       #   redirect_to new confirmation page (maybe refactor to partial)
+       #   set current session order id to nil
+       session[:order_id] = nil
+       redirect_to "/orders/confirmation"
+      #  render final_countdown_path
      else
        raise "Boo not paid"
        # else

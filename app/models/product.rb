@@ -6,6 +6,9 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates :price, numericality: true
   validates :price, numericality: { greater_than: 0 }
+  validates :quantity, presence: true
+  validates :quantity, numericality: true
+  validates :quantity, numericality: { greater_than: 0 }
   belongs_to :merchant
   has_many :order_items
   has_many :orders, through: :order_items
