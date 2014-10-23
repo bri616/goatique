@@ -21,8 +21,6 @@ Rails.application.routes.draw do
 
 #######################################################################
 
-  get "/orders",              to: "orders#index"
-
   get "/merchants/",          to: "merchants#index",  as: :merchants_home
   get "/merchants/new",       to: "merchants#new",    as: :merchant_signup
   post "/merchants/create",   to: "merchants#create", as: :merchant_create
@@ -32,7 +30,7 @@ Rails.application.routes.draw do
 
 #######################################################################
   post "/orders/checkout",        to: "orders#checkout", as: :checkout
-  get "/orders",                  to: "orders#index"
+  get "/orders",                  to: "orders#index", as: :orders
   # post "/orders",               to: "order_items#update_stock"
 
   # get 'orders/update'

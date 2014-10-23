@@ -42,7 +42,7 @@ class OrderItemsController < ApplicationController
     if @order_item.update(order_params)
     redirect_to "/orders"
     else
-      render :edit
+      redirect_to orders_path
     end
   end
 
