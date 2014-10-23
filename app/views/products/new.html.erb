@@ -5,6 +5,7 @@
 <h2>Add New Product</h2>
 
 <form action="/products/new" method="POST">
+  <%= render 'shared/error_messages', obj: @product %>
 
   <div><p>Product</div>
     <div><input type="text" name="product[name]" /></p></div>

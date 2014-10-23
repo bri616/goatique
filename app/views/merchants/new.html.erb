@@ -5,6 +5,7 @@
 
 <body>
   <form method="POST" action="/merchants/create">
+    <%= render 'shared/error_messages', obj: @merchant %>
     <table>
       <tr> <td>Email:</td> <td><input type="text" name="merchant[email]"/></td></tr>
       <tr> <td>Username:</td> <td><input type="text" name="merchant[user_name]"/></td></tr>
