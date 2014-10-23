@@ -1,0 +1,7 @@
+<% if obj.errors.any? %>
+  <ul class="error-messages">
+    <% obj.errors.each do |column_name, message| %>
+    <li><%= column_name %> <%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
