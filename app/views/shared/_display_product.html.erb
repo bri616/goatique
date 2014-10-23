@@ -27,7 +27,7 @@
   </div>
 
   Categories: <% product.categories.each do |category| %>
-          <%= category.name %>
+          <a href="/categories/<%= category.id %>"><%= category.name %></a>
         <% end %>
 
   <div class="add-to-cart">
