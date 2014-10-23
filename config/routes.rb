@@ -82,9 +82,9 @@ Rails.application.routes.draw do
 
   # Reviews
 
-  get   "/reviews/:id/index",     to: "reviews#add"
-  post  "/reviews/:id/index",     to: "reviews#add"
-  get   "/reviews/:id/add",        to: "reviews#add"
+  get   "/reviews/:id/add",     to: "reviews#add" ,      as: :add_review
+  post  "/reviews/index",     to: "reviews#index"
+  # get   "/reviews/:id/add",       to: "reviews#add"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
