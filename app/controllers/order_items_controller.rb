@@ -43,7 +43,9 @@ class OrderItemsController < ApplicationController
     if @order_item.update(order_params)
       redirect_to "/orders"
     else
+
       raise "This is an error, the order item could not be updated (probably something could not be validated... maybe too many items compared to stock?)"
+
     end
   end
 
