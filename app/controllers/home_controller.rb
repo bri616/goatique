@@ -1,8 +1,9 @@
 class HomeController < ApplicationController
 
   def index
-    @products = Product.all
-    render :index
+    @merchants = Merchant.all
+    # @products = Product.all
+    # render :index
   end
 
   def authenticate_user
