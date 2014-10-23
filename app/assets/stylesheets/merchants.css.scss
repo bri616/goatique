@@ -1,0 +1,38 @@
+
+.merchant-container {
+  padding: 10px;
+  display: inline-block;
+  border: 2px solid #29829d;
+  width: 28%;
+  margin: 20px;
+  height: auto;
+  vertical-align: top;
+  position: relative;
+  line-spacing: normal;
+}
+
+.merchant-container > .merchant-name {
+  text-align: center;
+  padding: 10px;
+  font-size: 20pt;
+  font-family: sans-serif;
+
+}
+
+.merchant-container > .merchant-name a:link{
+  color: #c24653;
+}
+
+// .merchant-container > .merchant-merchant {
+//   padding: 10px;
+// }
+//
+// .merchant-container > .merchant-description {
+//   font-family: sans-serif;
+//   padding: 10px;
+// }
+//
+// .merchant-container > .merchant-price {
+//   position: relative;
+//   bottom: 0;
+// }
