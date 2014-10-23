@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get  "/orders/confirmation"
 
   get "/orders",                  to: "orders#index", as: :orders
+  # get "/orders",                  to: "orders#index", as: :cart
   # post "/orders",               to: "order_items#update_stock"
 
   # get 'orders/update'
