@@ -9,7 +9,14 @@ class OrdersController < ApplicationController
   end
 
   def checkout
-
+    # if @current_order.update status:paid
+    #   iterate through order_items and update_stock based on #of items ordered(needs to be in model bc relates to DB)
+    #   set current  session order id to nil
+    #   redirect_to new confirmation page (maybe refactor to partial)
+    # else
+    #   throw error
+    #   (refactor) redirect to cart/checkout page
+    #
   end
 
   def update_all

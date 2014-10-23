@@ -12,4 +12,7 @@ class Product < ActiveRecord::Base
   has_and_belongs_to_many :categories
   # http://guides.rubyonrails.org/association_basics.html#the-has-and-belongs-to-many-association
 
+
+#   update stock method iterate through order_items and update_stock based on #of items ordered(needs to be in model bc relates to DB)
+
 end
