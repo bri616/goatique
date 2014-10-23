@@ -16,7 +16,11 @@
 
   <blockquote> <%= @product.description %> </blockquote>
   Sold by <a href="/merchants/<%= @product.merchant_id %>"><%=@product.merchant.shop_name %></a> for <%= number_to_currency(@product.price) %><br>
-  <%= @product.quantity %> in stock <br>
+  <% if @product.quantity == 0 %>
+    Out of stock
+  <% else %>
+    <%= @product.quantity %> in stock
+  <% end %><br>
 
   <!-- why can't this go on one line? -->
 
