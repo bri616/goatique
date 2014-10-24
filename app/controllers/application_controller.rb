@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
 
   def current_order
-    if session[:order_id]
+    if session[:order_id] && (Order.where(id: session[:order_id]).length > 0)
       @current_order = Order.find(session[:order_id])
     else
       @current_order = Order.create()
@@ -16,8 +16,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    if session[:loggedin_merchant_id]
+    if session[:loggedin_merchant_id] && (Merchant.where(id: session[:loggedin_merchant_id]).length > 0)
       @current_user = Merchant.find(session[:loggedin_merchant_id])
+    else
+      session[:loggedin_merchant_id] = nil
     end
   end
 
