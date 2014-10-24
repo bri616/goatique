@@ -44,6 +44,7 @@ class OrderItemsController < ApplicationController
       redirect_to "/orders"
     else
       @order = @current_order
+      @errorobj = @order_item
       render :template => "orders/index"
       # render :template => "orders/index", :locals => { :user => @user = @current_user }
       # render @order_item.errors
