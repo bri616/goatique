@@ -1,5 +1,6 @@
 
 <div class="checkout">
+   <%= render "shared/error_messages", obj: @errorobj if @errorobj %>
    <div ><% @order.sorted_order_items.each do |banana| %>
 
           <%= banana.product.name.upcase %>
@@ -22,7 +23,7 @@
 
 
 
-        <%= render "shared/error_messages", obj: banana %>
+
     </div> <!-- /id delete -->
     <% end  %>
 

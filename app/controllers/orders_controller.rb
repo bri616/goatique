@@ -31,11 +31,7 @@ class OrdersController < ApplicationController
        redirect_to "/orders/confirmation"
 
      else
-       raise "Boo not paid"
-       # else
-       #   throw error
-       #   (refactor) redirect to cart/checkout page
-       #
+       render :checkout
      end
 
   end
