@@ -3,3 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Body
+
+
+.checkout {
+  margin: 20px;
+  line-height: 25px;
+}
+
+.goatpic {
+  height: 300px;
+  width: 300px;
+  display: inline-block;
+  position: relative;
+  color: white;
+  background-image: url('thirsty_goat_gif.gif');
+  background-repeat: no-repeat;
+}

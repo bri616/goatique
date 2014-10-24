@@ -26,6 +26,13 @@ a:link, a:visited {
   text-decoration: underline;
 }
 
+script, iframe {
+  // padding-top: 30px;
+  // vertical-align: center;
+  // padding: 0px;
+  // padding-bottom: 15px;
+  // display: inline;
+}
 
 // header styling here
 .header {
@@ -100,6 +107,7 @@ a:link, a:visited {
 }
 
 .cart {
+  float: right;
   margin: 10px;
   width: 100px;
   height: 80px;

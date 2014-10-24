@@ -1,6 +1,6 @@
 
-<div>
-   <div><% @order.sorted_order_items.each do |banana| %>
+<div class="checkout">
+   <div ><% @order.sorted_order_items.each do |banana| %>
 
           <%= banana.product.name.upcase %>
           $<%= banana.product.price * banana.product_quantity%>
@@ -18,19 +18,18 @@
 
        </form>
 
-       <%= button_to "Delete", "/order_items/#{banana.id}", method: :delete %>
+       <div id="delete"><%= button_to "Delete", "/order_items/#{banana.id}", method: :delete %></div>
 
-           <%if banana.product_quantity > banana.product.quantity %>
-               Sorry, we goan't have enough in stock. Current Stock:
-               <%= banana.product.quantity %>
-           <%end%>
 
-         </div>
+
+        <%= render "shared/error_messages", obj: banana %>
+    </div> <!-- /id delete -->
     <% end  %>
 
 
+  </div>
 
-  <% button = true %>
+  <div><% button = true %>
   <% @order.sorted_order_items.each do |x| %>
     <% total = 0 %>
     <% stock_total = 0 %>
@@ -45,11 +44,4 @@
     <%= "Some of your items don't have enough in stock. You can't checkout yet. " %>
   <% end %>
 
-
-
-
-
-
-
-
-</div>
+</div> <!-- /class checkout -->

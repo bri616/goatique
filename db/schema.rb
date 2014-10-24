@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141023173840) do
+=======
+ActiveRecord::Schema.define(version: 20141023235334) do
+>>>>>>> c5b86420ecff9dad74cefe591ffbcb6bb283de40
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,8 +56,9 @@ ActiveRecord::Schema.define(version: 20141023173840) do
     t.string   "mailing_address"
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "card_number"
-    t.date     "expiration_date"
+    t.string   "card_number"
+    t.string   "expiration_date"
+    t.string   "order_status"
   end
 
   create_table "products", force: true do |t|

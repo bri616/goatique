@@ -1,0 +1,8 @@
+<% if obj.errors.any? %>
+  <%= image_tag "scowling_goat.png" %>
+  <ul class="error-messages">
+    <% obj.errors.each do |column_name, message| %>
+    <li><%= column_name %> <%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
