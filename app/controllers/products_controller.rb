@@ -54,6 +54,12 @@ class ProductsController < ApplicationController
     redirect_to "/cart"
   end
 
+  def reviews
+    # show all reviews with this product
+    find_product
+    @reviews = @product.reviews
+  end
+
   # def show
   #   find_product
   # end
