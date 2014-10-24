@@ -22,9 +22,11 @@ by name Product.all(name: ) // @product.all <= iteration -->
 <h3>Featured Merchants</h3>
 <br>
 
+
 <% @merchants.each do |merchant| %>
 <%= render "shared/display_merchant", merchant: merchant %>
 <% end %>
+
 
 </body>
 </html>
