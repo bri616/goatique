@@ -1,6 +1,22 @@
 <h1>Add Review</h1>
-<form action="/reviews/:id/index" method="POST">
-<input type="text" name="review[content]">
+<!-- <form action="/reviews/index" method="POST">
+<input type="text" name="review[review]">
+<input type="hidden" name="review[product_id]" value = "<%= params[:review][:product_id]%>"/>
+
 
 <button>Submit</button>
-</form>
+</form> -->
+
+<%=form_for @review do |f| %>
+<div class = "field">
+  <%= f.label :review, "Write your review!" %>
+  <%= f.text_field :review %>
+</div>
+
+<div class = "field">
+  <!-- for some reasom the key 'product_id' is coming in with colon in front. See custom params on button in /product/about -->
+  <%= f.hidden_field :product_id, :value => params[:review]["product_id"] %>
+  <%= f.submit %>
+</div>
+
+<%end %>
