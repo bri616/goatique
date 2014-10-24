@@ -9,10 +9,13 @@
     <%= button_to "Edit", product_edit_path, method: :get %>
   <% end %>
 
-<form action= "/reviews/:id/index" method= "POST">
-  <button>Add Review</button>
-</form>
+<%= button_to "Add Review", add_review_path, params: { "review[product_id]" => @product.id.to_i }, :id => "add-review-btn",
+      :class => "add-btn tip", :method => :get %>
 
+
+<%@product.reviews.each do |review|%>
+<p><%= review.review %></p>
+<%end %>
 
   <blockquote> <%= @product.description %> </blockquote>
   Sold by <a href="/merchants/<%= @product.merchant_id %>"><%=@product.merchant.shop_name %></a> for <%= number_to_currency(@product.price) %><br>
@@ -38,7 +41,6 @@
   :controller => "order_items",
   :action => "create", :product_id => @product.id,
   :order_id => session[:order_id]}) %>
-
 
 </body>
 </html>
