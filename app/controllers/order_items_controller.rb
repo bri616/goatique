@@ -43,9 +43,10 @@ class OrderItemsController < ApplicationController
     if @order_item.update(order_params)
       redirect_to "/orders"
     else
-
-      raise "This is an error, the order item could not be updated (probably something could not be validated... maybe too many items compared to stock?)"
-
+      @order = @current_order
+      render :template => "orders/index"
+      # render :template => "orders/index", :locals => { :user => @user = @current_user }
+      # render @order_item.errors
     end
   end
 
